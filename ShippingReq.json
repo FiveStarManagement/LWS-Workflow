@@ -1,0 +1,37 @@
+{
+  "XLShipReqs": {
+    "XLShipReq": [
+      {
+        "CustCode": "POL01",
+        "CompNum": 2,
+        "BillAddrNum": 107,
+        "ShipAddrNum": 2430,
+        "CustContactCode": "",
+        "DeliveryTerms": "FOB",
+        "EstArrivalDate": "2025-12-31",
+        "EstArrivalTime": "",
+        "ExternalRef": "",
+        "PickStatus": 0,
+        "PlantCode": "2",
+        "ShipDate": "2025-12-31",
+        "ShipReqNum": "",
+        "ShipReqStat": 1,
+        "XLShipReqLine": [
+          {
+            "CompNum": 2,
+            "ItemCode": "1600-2300-NPU01-0686T2",
+            "PlantCode": "2",
+            "SOPlantCode": "2",
+            "SOrderLineNum": 1,
+            "SOrderNum": 247289,
+            "ShipQty": 13573.0,
+            "ShipReqLineNum": 1,
+            "ShipReqNum": "",
+            "ShippingRef": "3736 PEND03",
+            "WhouseCode": ""
+          }
+        ]
+      }
+    ]
+  }
+}
