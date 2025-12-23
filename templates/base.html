@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LWS Workflow Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --ok:#0f766e;
+      --bad:#b00020;
+      --warn:#b45309;
+      --border:#e5e7eb;
+
+      --brand:#111827;
+      --brand2:#0b1224;
+      --link:#2563eb;
+
+      --shadow: 0 1px 2px rgba(0,0,0,.04);
+      --radius: 12px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    header{
+      background: linear-gradient(180deg, var(--brand), var(--brand2));
+      color:#fff;
+      padding:12px 22px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 6px 20px rgba(0,0,0,.18);
+    }
+
+    .headerRow{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .headerLeft{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      min-width: 240px;
+    }
+
+    header h1{
+      margin:0;
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .subTitle{
+      font-size:12px;
+      opacity:.85;
+    }
+
+    .headerRight{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      flex: 1;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow);
+      margin-bottom:14px;
+    }
+
+    .cardHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    h2{ font-size:18px; margin:0; }
+    h3{ font-size:15px; margin:0; }
+    .muted{ color:var(--muted); }
+    .small{ font-size:12px; }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:10px;
+      background:var(--brand);
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+      cursor:pointer;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ opacity:.92; text-decoration:none; }
+    .btn-secondary{ background:#374151; }
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .btn-ghost:hover{ background: rgba(255,255,255,.08); }
+
+    .pill{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+      border:1px solid rgba(0,0,0,.04);
+    }
+    .ok{ background:#dcfce7; color:#166534; }
+    .bad{ background:#fee2e2; color:#991b1b; }
+    .warn{ background:#ffedd5; color:#9a3412; }
+
+    .tableWrap{
+      width:100%;
+      overflow:auto;
+      border-radius: 10px;
+      border:1px solid var(--border);
+    }
+    table{ width:100%; border-collapse:collapse; min-width: 860px; }
+    th, td{
+      text-align:left;
+      padding:11px 10px;
+      border-bottom:1px solid var(--border);
+      font-size:14px;
+      vertical-align:middle;
+      line-height:1.25;
+    }
+    th{
+      font-weight:900;
+      color:#374151;
+      background:#fafafa;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    tbody tr:hover{ background:#fbfdff; }
+
+    .grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media(max-width:900px){
+      .grid{ grid-template-columns:1fr; }
+      table{ min-width: 720px; }
+    }
+
+    pre{
+      background:#0b1020;
+      color:#d1d5db;
+      padding:12px;
+      border-radius:10px;
+      overflow:auto;
+      border:1px solid rgba(255,255,255,.06);
+      margin:0;
+    }
+
+    /* Global search (header) */
+    .gSearch{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .gInput, .gSelect{
+      border:1px solid rgba(255,255,255,.20);
+      border-radius:12px;
+      padding:9px 10px;
+      font-size:13px;
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      outline:none;
+    }
+    .gInput{ min-width: 260px; }
+    .gInput::placeholder{ color: rgba(255,255,255,.75); }
+    .gSelect option{ color:#111827; }
+
+    /* Datetime */
+    .dtCell{ white-space:nowrap; }
+    .dtMain{ font-weight:800; color:#111827; }
+    .dtSub{ margin-top:2px; }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-left:10px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#3730a3;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(55,48,163,.12);
+    }
+
+    .crumbs{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
+    .crumbs a{ color:#111827; text-decoration:none; }
+    .crumbs a:hover{ text-decoration:underline; }
+    .sep{ color:#9ca3af; }
+
+    footer{
+      max-width:1100px;
+      margin: 18px auto 28px;
+      padding: 0 18px;
+      color:#9ca3af;
+      font-size:12px;
+    }
+    .nowrap {
+      white-space: nowrap;
+    }
+
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="headerRow">
+    <div class="headerLeft">
+      <h1>LWS Workflow Admin</h1>
+      <div class="subTitle">PolyTex (Plant 4) • StarPak (Plant 2) • Runs • Orders • Troubleshooting</div>
+    </div>
+
+    <div class="headerRight">
+      <!-- Global search (every page) -->
+      <form class="gSearch" method="get" action="/">
+        <select class="gSelect" name="mode" title="Search type">
+          <option value="any">Any</option>
+          <option value="polyso">PolyTex SO</option>
+          <option value="starso">StarPak SO</option>
+          <option value="po">PolyTex PO</option>
+          <option value="job">JOB</option>
+        </select>
+
+        <input class="gInput" type="text" name="q" placeholder="Search PolyTex SO / StarPak SO / PO / JOB…" />
+        <button class="btn btn-ghost" type="submit">Search</button>
+      </form>
+
+      <a class="btn btn-ghost" href="/">Dashboard</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  {% block content %}{% endblock %}
+</div>
+
+<footer>
+  <div>Internal Admin • PolyTex (Plant 4) • StarPak (Plant 2)</div>
+</footer>
+</body>
+</html>

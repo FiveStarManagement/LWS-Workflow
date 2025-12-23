@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <div class="cardHeader">
+    <div>
+      <div class="crumbs">
+        <a href="/">Dashboard</a> <span class="sep">›</span>
+        <span>Run</span> <span class="sep">›</span>
+        <b>{{ run.run_id[:8] }}</b>
+      </div>
+
+      <h2 style="margin:8px 0 0;">Run {{ run.run_id }}</h2>
+
+      <p class="muted" style="margin:8px 0 0;">
+        Start: <b>{{ run.start_ts | ct }} (CT)</b><br>
+        End: <b>{{ run.end_ts | ct }} (CT)</b><br>
+        Eligible: <b>{{ run.eligible_count }}</b> |
+        Processed: <b>{{ run.processed_count }}</b> |
+        Failed: <b>{{ run.failed_count }}</b>
+      </p>
+    </div>
+
+    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+      <a class="btn btn-secondary" href="/">Back</a>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="cardHeader">
+    <div>
+      <h3 style="margin:0;">Orders in this Run</h3>
+      <div class="muted small" style="margin-top:6px;">
+        PolyTex (Plant 4) • StarPak (Plant 2)
+      </div>
+    </div>
+
+    <input
+      id="orderFilter"
+      class="input"
+      type="text"
+      placeholder="Filter this table (SO/PO/JOB/status)…"
+      style="max-width:420px;"
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="tableWrap">
+    <table id="ordersTable">
+      <thead>
+        <tr>
+          <th style="width:130px;">PolyTex SO</th>
+          <th style="width:130px;">PolyTex Item</th>
+          <th style="width:130px;">StarPak SO</th>
+          <th style="width:130px;">Ship Req</th>
+          <th style="width:140px;">PolyTex PO</th>
+          <th style="width:140px;">PolyTex Job</th>
+          <th style="width:140px;">StarPak Job</th>
+          <th style="width:120px;">Status</th>
+          <th>Last Step</th>
+          <th style="width:190px;">Updated</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% if orders and orders|length > 0 %}
+          {% for o in orders %}
+          <tr>
+            <td><a href="/order/{{ o.sordernum }}">{{ o.sordernum }}</a></td>
+            <td class="muted nowrap" title="{{ o.polytex_item_code }}">
+              {{ o.polytex_item_code or "—" }}
+            </td>
+
+            <td class="muted">{{ o.so_p2_num or "—" }}</td>
+            <td>
+              {% if o.shipreq_p2 %}
+                <span class="mono">{{ o.shipreq_p2 }}</span>
+              {% else %}
+                —
+              {% endif %}
+            </td>
+
+            <td class="muted">{{ o.po_p4_num or "—" }}</td>
+            <td class="muted">{{ o.job_p4_code or "—" }}</td>
+            <td class="muted">{{ o.job_p2_code or "—" }}</td>
+
+            <td>
+              {% if o.status == "COMPLETE" %}
+                <span class="pill ok">COMPLETE</span>
+              {% elif o.status == "FAILED" %}
+                <span class="pill bad">FAILED</span>
+              {% else %}
+                <span class="pill warn">{{ o.status or "—" }}</span>
+              {% endif %}
+            </td>
+
+            <td class="muted">{{ o.last_step or "—" }}</td>
+            <td class="muted">{{ o.updated_ts| ct }} (CT)</td>
+          </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="8" class="muted" style="padding:16px;">
+              No orders were captured for this run.
+            </td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // Simple client-side filter for the run orders table
+  const input = document.getElementById("orderFilter");
+  const table = document.getElementById("ordersTable");
+  if (input && table) {
+    input.addEventListener("input", () => {
+      const q = input.value.toLowerCase().trim();
+      const rows = table.querySelectorAll("tbody tr");
+      rows.forEach(r => {
+        const txt = r.innerText.toLowerCase();
+        r.style.display = txt.includes(q) ? "" : "none";
+      });
+    });
+  }
+</script>
+
+{% endblock %}

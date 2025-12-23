@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="padding:14px 16px;">
+  <div class="cardHeader" style="margin-bottom:0;">
+    <div>
+      <h2 style="margin:0;">Recent Runs</h2>
+      <p class="muted" style="margin:6px 0 0;">
+        Search by <b>PolyTex SO</b>, <b>StarPak SO</b>, <b>PolyTex PO</b>, or <b>JOB</b> to filter runs.
+        {% if q %}
+          <span class="chip">Filter: <b>{{ q }}</b> ({{ mode|upper }})</span>
+          {% if match_count is not none %}
+            <span class="muted" style="margin-left:8px;">{{ match_count }} run(s) found</span>
+          {% endif %}
+        {% endif %}
+      </p>
+
+      <div class="muted small" style="margin-top:8px;">
+        <b>Plant Reference:</b>
+        <span style="margin-left:6px;">Plant 4 = <b>PolyTex</b></span>
+        <span style="margin-left:12px;">Plant 2 = <b>StarPak</b></span>
+      </div>
+
+      <div class="muted small" style="margin-top:6px;">
+        Tip: Partial search works. Examples:
+        <b>PolyTex SO</b>: 12345 • <b>PolyTex PO</b>: PO-77 • <b>JOB</b>: JOB-AB
+      </div>
+    </div>
+
+    <form method="get" action="/" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+      <select name="mode" class="select" style="border:1px solid var(--border); border-radius:12px; padding:10px 12px;">
+        <option value="any" {% if mode=="any" %}selected{% endif %}>Any</option>
+        <option value="polyso" {% if mode=="polyso" %}selected{% endif %}>PolyTex SO (Starts Here)</option>
+        <option value="starso" {% if mode=="starso" %}selected{% endif %}>StarPak SO</option>
+        <option value="po" {% if mode=="po" %}selected{% endif %}>PolyTex PO</option>
+        <option value="job" {% if mode=="job" %}selected{% endif %}>JOB (PolyTex / StarPak)</option>
+      </select>
+
+      <input
+        class="input"
+        type="text"
+        name="q"
+        value="{{ q or '' }}"
+        placeholder="Search PolyTex SO / StarPak SO / PO / JOB…"
+        autocomplete="off"
+        style="border:1px solid var(--border); border-radius:12px; padding:10px 12px; min-width:320px;"
+      />
+
+      <button class="btn" type="submit">Search</button>
+      {% if q %}
+        <a class="btn btn-secondary" href="/">Clear</a>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<div class="card">
+  <div class="cardHeader">
+    <div class="muted small">
+      {% if q %}
+        Showing runs that include orders matching: <b>{{ q }}</b>
+      {% else %}
+        Showing most recent runs.
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="tableWrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px;">Run</th>
+          <th style="width:260px;">Start</th>
+          <th style="width:260px;">End</th>
+          <th style="width:110px;">Duration</th>
+          <th style="width:110px;">Eligible</th>
+          <th style="width:110px;">Processed</th>
+          <th style="width:90px;">Failed</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% if runs and runs|length > 0 %}
+          {% for r in runs %}
+          <tr>
+            <td><a href="/run/{{ r.run_id }}">{{ r.run_id[:8] }}</a></td>
+
+            <td class="dtCell">
+              <div class="dtMain" data-iso="{{ r.start_ts }}">{{ r.start_ts|ct }} (CT)</div>
+
+              <div class="dtSub muted small rel"></div>
+            </td>
+
+            <td class="dtCell">
+              {% if r.end_ts %}
+                <div class="dtMain" data-iso="{{ r.end_ts }}">{{ r.end_ts|ct }} (CT)</div>
+                <div class="dtSub muted small rel"></div>
+              {% else %}
+                <div class="dtMain muted">—</div>
+                <div class="dtSub muted small">Still running</div>
+              {% endif %}
+            </td>
+
+            <td class="muted">
+              {% set d = (r.start_ts|duration_s(r.end_ts)) %}
+              {% if d is not none %}{{ d }}s{% else %}—{% endif %}
+            </td>
+
+            <td>{{ r.eligible_count }}</td>
+            <td>{{ r.processed_count }}</td>
+
+            <td>
+              {% if r.failed_count|int > 0 %}
+                <span class="pill bad">{{ r.failed_count }}</span>
+              {% else %}
+                <span class="pill ok">0</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="7" class="muted" style="padding:16px;">
+              No runs found for that search.
+            </td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function relTime(iso) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return "";
+    const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+    if (diff < 60) return diff + " sec ago";
+    const m = Math.floor(diff/60);
+    if (m < 60) return m + " min ago";
+    const h = Math.floor(m/60);
+    if (h < 48) return h + " hr ago";
+    const days = Math.floor(h/24);
+    return days + " day" + (days > 1 ? "s" : "") + " ago";
+  }
+
+  document.querySelectorAll(".dtCell").forEach(cell => {
+    const main = cell.querySelector(".dtMain[data-iso]");
+    const sub = cell.querySelector(".rel");
+    if (main && sub) sub.textContent = relTime(main.dataset.iso);
+  });
+</script>
+
+{% endblock %}

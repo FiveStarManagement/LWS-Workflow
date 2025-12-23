@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+  <a href="/" class="btn btn-secondary">Dashboard</a>
+
+  {% if order.last_run_id %}
+    <a href="/run/{{ order.last_run_id }}" class="btn">
+      ← Back to Run
+    </a>
+  {% endif %}
+</div>
+
+<div class="card">
+  <div class="cardHeader">
+    <div>
+      <div class="crumbs">
+        <a href="/">Dashboard</a> <span class="sep">›</span>
+        <span>Order</span> <span class="sep">›</span>
+        <b>PolyTex SO {{ order.sordernum }}</b>
+      </div>
+
+      <h2 style="margin:8px 0 0;">Order</h2>
+
+      <p class="muted" style="margin:6px 0 0;">
+        <b>PolyTex SO (Starts Here):</b> {{ order.sordernum }}<br>
+        <b>StarPak SO:</b> {{ order.so_p2_num or "—" }}<br>
+        {% if order.last_run_id %}
+          <b>Run:</b>
+          <a href="/run/{{ order.last_run_id }}">{{ order.last_run_id[:8] }}</a><br>
+        {% endif %}
+        Last updated: {{ order.updated_ts | ct }} (CT)
+
+      </p>
+    </div>
+
+    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+      <a class="btn" href="/order/{{ order.sordernum }}/retry">Retry Next Run</a>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3 style="margin:0 0 10px;">Status</h3>
+    <p style="margin:0;">
+      {% if order.status == "COMPLETE" %}
+        <span class="pill ok">COMPLETE</span>
+      {% elif order.status == "FAILED" %}
+        <span class="pill bad">FAILED</span>
+      {% else %}
+        <span class="pill warn">{{ order.status }}</span>
+      {% endif %}
+      <span class="muted" style="margin-left:10px;">Step: <b>{{ order.last_step }}</b></span>
+    </p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 10px;">Created Records</h3>
+    <div class="tableWrap">
+      <table style="min-width: 560px;">
+        <tr>
+          <td><b>PolyTex Item (Plant 4)</b></td>
+          <td class="nowrap" title="{{ order.polytex_item_code }}">{{ order.polytex_item_code or "—" }}</td>
+        </tr>
+        <tr><td><b>PolyTex Job (Plant 4)</b></td><td>{{ order.job_p4_code or "—" }}</td></tr>
+        <tr><td><b>PolyTex PO (Plant 4)</b></td><td>{{ order.po_p4_num or "—" }}</td></tr>
+        <tr><td><b>StarPak SO (Plant 2)</b></td><td>{{ order.so_p2_num or "—" }}</td></tr>
+        <tr><td><b>ShipReq (Plant 2)</b></td><td>{{ order.shipreq_p2 or "—" }}</td></tr>
+        <tr><td><b>StarPak Job (Plant 2)</b></td><td>{{ order.job_p2_code or "—" }}</td></tr>
+      </table>
+    </div>
+
+    <div class="muted small" style="margin-top:10px;">
+      <b>Plant Reference:</b> PolyTex = Plant 4 • StarPak = Plant 2
+    </div>
+  </div>
+</div>
+
+{% if order.last_error_summary %}
+<div class="card">
+  <div class="cardHeader">
+    <h3 style="margin:0; color: var(--bad);">Last Error</h3>
+    <span class="pill bad">ATTENTION</span>
+  </div>
+
+  <p style="margin:0 0 10px;">{{ order.last_error_summary }}</p>
+
+  {% if order.last_api_messages %}
+    <h3 style="margin:14px 0 8px;">API Messages</h3>
+    <pre>{{ order.last_api_messages }}</pre>
+  {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}
