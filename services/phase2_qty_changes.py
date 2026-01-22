@@ -572,9 +572,48 @@ def apply_req_changes_to_po(
 
         snap = get_req_snapshot_keyed(sqlite_conn, str(job_p4), reqgroup, item)
 
-        # First time: store baseline only
+        # First time snapshot:
+        # IMPORTANT: If we're already in SO4_QTY_CHANGED_WAIT_RECONFIRM, do NOT seed baseline
+        # from PV_Req (it might already reflect reconfirm). Instead seed from current downstream PO qty
+        # so Phase2B can detect the "catch-up" delta safely.
         if not snap:
-            upsert_req_snapshot_keyed(sqlite_conn, str(job_p4), reqgroup, item, requiredqty, requireddate)
+            baseline_qty = float(requiredqty)   # default fallback
+            baseline_src = "pvreq"
+
+            # Determine current workflow step
+            try:
+                st0 = _get_state_fields(sqlite_conn, int(so4_sordernum))
+                current_step0 = (st0.get("last_step") if st0 else "") or ""
+            except Exception:
+                current_step0 = ""
+
+            if current_step0 == "SO4_QTY_CHANGED_WAIT_RECONFIRM":
+                # Use SO4 line from req row if available; otherwise line 1
+                so4_line0 = int(
+                    r.get("SOrderLineNum")
+                    or r.get("SORDERLINENUM")
+                    or r.get("sorderlinenum")
+                    or 1
+                )
+
+                m0 = get_po_map(sqlite_conn, int(so4_sordernum), int(so4_line0))
+                if m0:
+                    po_num0 = int(m0["po_num"])
+                    po_linenum0 = int(m0["po_linenum"])
+                    info0 = get_po_line_info(ro_conn, po_num0, po_linenum0)
+                    if info0 and info0.get("orderedqty") is not None:
+                        baseline_qty = float(info0.get("orderedqty") or 0.0)
+                        baseline_src = f"po:{po_num0}/{po_linenum0}"
+
+            upsert_req_snapshot_keyed(
+                sqlite_conn,
+                str(job_p4),
+                reqgroup,
+                item,
+                baseline_qty,
+                requireddate
+            )
+
             insert_change_log(
                 sqlite_conn,
                 run_id,
@@ -582,15 +621,18 @@ def apply_req_changes_to_po(
                 0,
                 "REQ_KEYED_SNAPSHOT_CREATED",
                 None,
-                requiredqty,
+                baseline_qty,
                 details={
                     "job_p4": str(job_p4),
                     "reqgroup": reqgroup,
                     "itemcode": item,
                     "requirement_id": req_id,
+                    "baseline_source": baseline_src,
+                    "pvreq_qty_at_create": float(requiredqty),
                 },
             )
             continue
+
 
 
         old_qty = float(_row_get(snap, "requiredqty", 0.0) or 0.0)
