@@ -31,7 +31,7 @@
 The LWS Workflow automates the end-to-end order fulfillment process for Liquid Water Solutions (LWS) orders across two manufacturing plants:
 
 - **Plant 4 (PolyTex)**: Receives customer orders, creates jobs for printed film production
-- **Plant 2 (StarPak)**: Manufactures finished goods using printed film from Plant 4
+- **Plant 2 (StarPak)**: Manufactures Printed Films goods from Plant 4
 
 ### Key Capabilities
 
