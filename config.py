@@ -5,7 +5,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-ENV = os.getenv("ENV", "TEST").upper()
+ENV = os.getenv("ENV", "LIVE").upper()
 
 DEFAULTS = {
     "TEST": {
@@ -34,6 +34,9 @@ RUN_EVERY_MINUTES = int(os.getenv("RUN_EVERY_MINUTES", "30"))
 ELIGIBLE_LOOKBACK_MINUTES = int(os.getenv("ELIGIBLE_LOOKBACK_MINUTES", "120"))  # buffer window
 MAX_ORDERS_PER_RUN = int(os.getenv("MAX_ORDERS_PER_RUN", "200"))
 
+# Lead time: StarPak needs printed film shipped to PolyTex
+REQUIRED_DATE_LEAD_DAYS = int(os.getenv("REQUIRED_DATE_LEAD_DAYS", "15"))
+
 # --- JOB REQUIREMENT SQL (Option B) ---
 # Change table/columns here if your Radius schema differs.
 JOB_REQ_SQL = os.getenv("JOB_REQ_SQL", """
@@ -54,7 +57,7 @@ FROM "PUB"."PV_Req" a
 WHERE a."CompNum" = 2
   AND a."PlantCode" = '4'
   AND a."JobCode" = ?
-  AND a."ReqGroupCode" = 'P4-FILM'
+  AND a."ReqGroupCode" IN ('P4-PF','P4-FILM')
   AND a."ReqStatus" IN (10, 11, 20, 21)
   AND COALESCE(a."POResQty",0) < 1
   AND COALESCE(a."InProdResQty",0) < 1
@@ -66,13 +69,27 @@ ORDER BY a."RequiredDate" ASC
 # Email recipients
 CSR_EMAILS = [e.strip() for e in os.getenv(
     "CSR_EMAILS",
-    "ukalidas@fivestarmanagement.com, mbravo@fivestarmanagement.com"
+    "ukalidas@fivestarmanagement.com, mbravo@fivestarmanagement.com, oft@fivestarmanagement.com"
 ).split(",") if e.strip()]
 
 ADMIN_EMAILS = [e.strip() for e in os.getenv(
     "ADMIN_EMAILS",
     "ukalidas@fivestarmanagement.com, mbravo@fivestarmanagement.com"
 ).split(",") if e.strip()]
+
+STARPAK_EMAILS = [e.strip() for e in os.getenv(
+    "STARPAK_EMAILS",
+    "ukalidas@fivestarmanagement.com, mbravo@fivestarmanagement.com, oft@fivestarmanagement.com"
+).split(",") if e.strip()]
+
+FULFILLMENT_EMAILS = [
+    "ukalidas@fivestarmanagement.com",
+    "mbravo@fivestarmanagement.com",
+    "oft@fivestarmanagement.com",
+    # add team distro
+]
+
+
 
 EMAIL_CONFIG = {
     "smtp_server": os.getenv("SMTP_SERVER", "smtp.office365.com"),
@@ -88,9 +105,16 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Logging
 LOG_DIR = os.path.join(BASE_DIR, "logs")
 LOG_FILE = os.getenv("LOG_FILE", "lws_workflow.log")
+# Logging
+LOG_LEVEL = "INFO"   # change to "DEBUG" when needed
+# LOG_LEVEL = "DEBUG"   # change to "INFO" when needed
+
 
 # Local state DB (SQLite) - ALWAYS under project folder
 STATE_DB_PATH = os.path.join(BASE_DIR, "state.db")
+
+# Eligibility start date (change anytime)
+LWS_ELIGIBILITY_START_DATE = "12/26/2025"
 
 
 # -------------- DB Helpers --------------

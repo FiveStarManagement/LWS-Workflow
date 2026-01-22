@@ -30,12 +30,20 @@
           <a href="/run/{{ order.last_run_id }}">{{ order.last_run_id[:8] }}</a><br>
         {% endif %}
         Last updated: {{ order.updated_ts | ct }} (CT)
-
       </p>
     </div>
 
     <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
       <a class="btn" href="/order/{{ order.sordernum }}/retry">Retry Next Run</a>
+
+      {% if order.status != "REMOVED" %}
+        <form method="POST" action="{{ url_for('order_remove', sordernum=order.sordernum) }}" style="display:inline;">
+          <button type="submit" class="btn btn-secondary"
+            onclick="return confirm('Remove SO {{ order.sordernum }} from workflow? You can resume using Retry Next Run.')">
+            Remove from Workflow
+          </button>
+        </form>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -48,6 +56,10 @@
         <span class="pill ok">COMPLETE</span>
       {% elif order.status == "FAILED" %}
         <span class="pill bad">FAILED</span>
+      {% elif order.status == "HOLD" %}
+        <span class="pill warn">HOLD</span>
+      {% elif order.status == "REMOVED" %}
+        <span class="pill bad">REMOVED</span>
       {% else %}
         <span class="pill warn">{{ order.status }}</span>
       {% endif %}
@@ -77,18 +89,59 @@
   </div>
 </div>
 
-{% if order.last_error_summary %}
+{# ==========================================================
+   ✅ Last Error (improved: show true Radius error + raw)
+   ========================================================== #}
+{% if order.last_error_summary or order.last_api_error_message or order.last_api_messages or order.last_api_raw %}
 <div class="card">
   <div class="cardHeader">
     <h3 style="margin:0; color: var(--bad);">Last Error</h3>
     <span class="pill bad">ATTENTION</span>
   </div>
 
-  <p style="margin:0 0 10px;">{{ order.last_error_summary }}</p>
+{# --- Workflow / API error headline (show something even if workflow msg is empty) --- #}
+{% if order.last_error_summary or order.last_api_error_message %}
+  <p style="margin:0 0 10px;">
+    <b>Workflow Error:</b>
+    {{ order.last_error_summary or order.last_api_error_message }}
+  </p>
+{% endif %}
 
-  {% if order.last_api_messages %}
-    <h3 style="margin:14px 0 8px;">API Messages</h3>
-    <pre>{{ order.last_api_messages }}</pre>
+{# --- API details table --- #}
+{% if order.last_api_error_message or order.last_api_entity or order.last_api_status %}
+  <h3 style="margin:14px 0 8px;">API Details</h3>
+  <div class="tableWrap">
+    <table style="min-width: 560px;">
+      {% if order.last_api_entity %}
+        <tr><td style="width:180px;"><b>API Entity</b></td><td>{{ order.last_api_entity }}</td></tr>
+      {% endif %}
+      {% if order.last_api_status is not none %}
+        <tr><td><b>API Status</b></td><td>{{ order.last_api_status }}</td></tr>
+      {% endif %}
+      {% if order.last_api_error_message %}
+        <tr><td><b>API Error</b></td><td>{{ order.last_api_error_message }}</td></tr>
+      {% endif %}
+    </table>
+  </div>
+{% endif %}
+
+
+{% if order.last_api_messages and order.last_api_messages != "[]" %}
+  <h3 style="margin:14px 0 8px;">API Messages</h3>
+  <pre style="white-space:pre-wrap;">{{ order.last_api_messages }}</pre>
+{% endif %}
+
+
+  {% if order.last_api_raw %}
+    <div style="margin-top:14px;">
+      <details>
+        <summary style="cursor:pointer; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;">
+          🧾 Raw API Response (stored / may be truncated)
+          <span class="muted small" style="font-weight:400;">Click to expand</span>
+        </summary>
+        <pre style="white-space:pre-wrap; margin-top:10px;">{{ order.last_api_raw }}</pre>
+      </details>
+    </div>
   {% endif %}
 </div>
 {% endif %}

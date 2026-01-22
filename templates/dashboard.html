@@ -1,12 +1,197 @@
 {% extends "base.html" %}
 {% block content %}
 
+{# ==========================================================
+   ✅ TOP BAR (light polish / no major layout change)
+   ========================================================== #}
+<div class="card" style="margin-bottom:16px; padding:14px 16px;">
+  <div class="cardHeader" style="margin-bottom:0; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+    <div>
+      <h2 style="margin:0;">LWS Workflow Admin</h2>
+      <p class="muted" style="margin:6px 0 0;">
+        Monitor runs, manage HOLD orders, and manually queue PolyTex SOs.
+      </p>
+
+      <div class="muted small" style="margin-top:10px;">
+        <b>Plant Reference:</b>
+        <span style="margin-left:6px;">Plant 4 = <b>PolyTex</b></span>
+        <span style="margin-left:12px;">Plant 2 = <b>StarPak</b></span>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+      <a class="btn btn-secondary" href="/archived">📦 Archived Orders</a>
+    </div>
+  </div>
+</div>
+
+
+{# ==========================================================
+   ✅ OPTIONAL INSIGHTS (collapsible, default collapsed)
+   ========================================================== #}
+<div class="card" style="margin-bottom:16px; padding:12px 14px;">
+  <details>
+    <summary style="cursor:pointer; font-weight:700; font-size:14px; display:flex; align-items:center; gap:8px;">
+      📊 Insights (optional)
+      <span class="muted small" style="font-weight:400;">Totals for today + all time</span>
+    </summary>
+
+    <div style="margin-top:14px; display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;">
+
+      <div style="min-width:180px;">
+        <div class="muted small">Today Orders</div>
+        <div style="font-size:18px; font-weight:800;">{{ today_total_orders }}</div>
+      </div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">Today Processed</div>
+        <div style="font-size:18px; font-weight:800;">{{ today_processed_orders }}</div>
+      </div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">Today COMPLETE</div>
+        <div style="font-size:18px; font-weight:800; color:var(--ok);">{{ today_complete_orders }}</div>
+      </div>
+
+      <div style="border-left:1px solid var(--border); height:46px;"></div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">All-Time Orders</div>
+        <div style="font-size:18px; font-weight:800;">{{ total_orders_all_time }}</div>
+      </div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">All-Time COMPLETE</div>
+        <div style="font-size:18px; font-weight:800; color:var(--ok);">{{ total_complete_all_time }}</div>
+      </div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">All-Time HOLD</div>
+        <div style="font-size:18px; font-weight:800; color:var(--bad);">{{ total_hold_all_time }}</div>
+      </div>
+
+      <div style="min-width:180px;">
+        <div class="muted small">All-Time FAILED</div>
+        <div style="font-size:18px; font-weight:800; color:var(--bad);">{{ total_failed_all_time }}</div>
+      </div>
+
+    </div>
+
+    <div class="muted small" style="margin-top:10px;">
+      These stats are informational only — workflow behavior does not depend on them.
+    </div>
+  </details>
+</div>
+
+
+{# ==========================================================
+   ✅ HELD ORDERS SECTION
+   ========================================================== #}
+{% if held_orders and held_orders|length > 0 %}
+<div class="card" style="margin-bottom:16px;">
+  <div class="cardHeader" style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <h2 style="margin:0; color:#b00020;">🚨 Active Held Orders</h2>
+      <p class="muted small" style="margin:6px 0 0;">
+        Current HOLD items (auto-updated every run). Click PolyTex SO to open details.
+      </p>
+    </div>
+    <span class="pill bad">{{ held_orders|length }}</span>
+  </div>
+
+  <div class="tableWrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px;">PolyTex SO</th>
+          <th style="width:120px;">StarPak SO</th>
+          <th style="width:120px;">PO</th>
+          <th style="width:140px;">Job P4</th>
+          <th style="width:140px;">Job P2</th>
+          <th>Last Step</th>
+          <th>Reason</th>
+          <th style="width:200px;">Updated</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for o in held_orders %}
+        <tr>
+          <td><a href="/order/{{ o.sordernum }}">{{ o.sordernum }}</a></td>
+          <td>{{ o.so_p2_num or "—" }}</td>
+          <td>{{ o.po_p4_num or "—" }}</td>
+          <td>{{ o.job_p4_code or "—" }}</td>
+          <td>{{ o.job_p2_code or "—" }}</td>
+
+          <td><b>{{ o.last_step }}</b></td>
+
+          <td class="muted small">
+            {{ o.last_error_summary or "—" }}
+          </td>
+
+          <td class="dtCell">
+            <div class="dtMain" data-iso="{{ o.updated_ts }}">{{ o.updated_ts|ct }} (CT)</div>
+            <div class="dtSub muted small rel"></div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% else %}
+<div class="card" style="margin-bottom:16px; padding:14px 16px;">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <h3 style="margin:0;">✅ No Active HOLD Orders</h3>
+      <p class="muted small" style="margin:6px 0 0;">
+        Nothing is currently blocked. If orders enter HOLD, they will appear here automatically.
+      </p>
+    </div>
+    <span class="pill ok">0</span>
+  </div>
+</div>
+{% endif %}
+
+
+{# ==========================================================
+   ✅ RUN NOW SECTION (smaller + professional)
+   ========================================================== #}
+<div class="card" style="margin-bottom:16px; padding:14px 16px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+    <div>
+      <h3 style="margin:0 0 6px;">▶ Run One Order (On Demand)</h3>
+      <p class="muted small" style="margin:0;">
+        Enter a PolyTex SO number. It will run on the next scheduler cycle.
+      </p>
+    </div>
+
+    <form method="POST" action="/order/run_now" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+      <input
+        type="text"
+        name="so4"
+        placeholder="PolyTex SO #"
+        class="input"
+        style="padding:10px 12px; min-width:200px;"
+        required
+      >
+      <button type="submit" class="btn">Run Now</button>
+    </form>
+  </div>
+</div>
+
+
+{# ==========================================================
+   ✅ RECENT RUNS SECTION
+   ========================================================== #}
 <div class="card" style="padding:14px 16px;">
-  <div class="cardHeader" style="margin-bottom:0;">
+  <div class="cardHeader" style="margin-bottom:10px;">
     <div>
       <h2 style="margin:0;">Recent Runs</h2>
+
       <p class="muted" style="margin:6px 0 0;">
-        Search by <b>PolyTex SO</b>, <b>StarPak SO</b>, <b>PolyTex PO</b>, or <b>JOB</b> to filter runs.
+        Search by <b>PolyTex SO</b>, <b>StarPak SO</b>, <b>PolyTex PO</b>, or <b>JOB</b>.
         {% if q %}
           <span class="chip">Filter: <b>{{ q }}</b> ({{ mode|upper }})</span>
           {% if match_count is not none %}
@@ -15,25 +200,19 @@
         {% endif %}
       </p>
 
-      <div class="muted small" style="margin-top:8px;">
-        <b>Plant Reference:</b>
-        <span style="margin-left:6px;">Plant 4 = <b>PolyTex</b></span>
-        <span style="margin-left:12px;">Plant 2 = <b>StarPak</b></span>
-      </div>
-
       <div class="muted small" style="margin-top:6px;">
         Tip: Partial search works. Examples:
-        <b>PolyTex SO</b>: 12345 • <b>PolyTex PO</b>: PO-77 • <b>JOB</b>: JOB-AB
+        <b>PolyTex SO</b>: 12345 • <b>PolyTex PO</b>: 237056 • <b>JOB</b>: JOB-AB
       </div>
     </div>
 
     <form method="get" action="/" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
       <select name="mode" class="select" style="border:1px solid var(--border); border-radius:12px; padding:10px 12px;">
         <option value="any" {% if mode=="any" %}selected{% endif %}>Any</option>
-        <option value="polyso" {% if mode=="polyso" %}selected{% endif %}>PolyTex SO (Starts Here)</option>
+        <option value="polyso" {% if mode=="polyso" %}selected{% endif %}>PolyTex SO</option>
         <option value="starso" {% if mode=="starso" %}selected{% endif %}>StarPak SO</option>
         <option value="po" {% if mode=="po" %}selected{% endif %}>PolyTex PO</option>
-        <option value="job" {% if mode=="job" %}selected{% endif %}>JOB (PolyTex / StarPak)</option>
+        <option value="job" {% if mode=="job" %}selected{% endif %}>JOB</option>
       </select>
 
       <input
@@ -41,18 +220,32 @@
         type="text"
         name="q"
         value="{{ q or '' }}"
-        placeholder="Search PolyTex SO / StarPak SO / PO / JOB…"
+        placeholder="Search..."
         autocomplete="off"
-        style="border:1px solid var(--border); border-radius:12px; padding:10px 12px; min-width:320px;"
+        style="border:1px solid var(--border); border-radius:12px; padding:10px 12px; min-width:280px;"
       />
 
+      <input type="hidden" name="hide_empty" value="0">
+      <label class="muted small" style="display:flex; align-items:center; gap:8px; user-select:none;">
+        <input
+          type="checkbox"
+          name="hide_empty"
+          value="1"
+          {% if hide_empty %}checked{% endif %}
+          style="width:16px; height:16px;"
+        />
+        Hide empty runs
+      </label>
+
       <button class="btn" type="submit">Search</button>
+
       {% if q %}
-        <a class="btn btn-secondary" href="/">Clear</a>
+        <a class="btn btn-secondary" href="/?hide_empty={{ 1 if hide_empty else 0 }}">Clear</a>
       {% endif %}
     </form>
   </div>
 </div>
+
 
 <div class="card">
   <div class="cardHeader">
@@ -60,7 +253,7 @@
       {% if q %}
         Showing runs that include orders matching: <b>{{ q }}</b>
       {% else %}
-        Showing most recent runs.
+        Showing most recent runs{% if hide_empty %} (hiding empty runs){% endif %}.
       {% endif %}
     </div>
   </div>
@@ -87,7 +280,6 @@
 
             <td class="dtCell">
               <div class="dtMain" data-iso="{{ r.start_ts }}">{{ r.start_ts|ct }} (CT)</div>
-
               <div class="dtSub muted small rel"></div>
             </td>
 
@@ -140,7 +332,7 @@
     const m = Math.floor(diff/60);
     if (m < 60) return m + " min ago";
     const h = Math.floor(m/60);
-    if (h < 48) return h + " hr ago";
+    if (h < 48) return m >= 60 ? h + " hr ago" : m + " min ago";
     const days = Math.floor(h/24);
     return days + " day" + (days > 1 ? "s" : "") + " ago";
   }

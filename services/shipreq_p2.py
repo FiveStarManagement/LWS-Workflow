@@ -83,6 +83,7 @@ def get_so_header_p2(conn, so_num: int) -> Dict[str, Any]:
     SELECT
         so."SOrderNum" AS SOrderNum,
         so."CustRef" AS CustRef,
+        so."AddtCustRef" AS AddtCustRef,
         so."CustReqDate" AS ReqDate,
         so."LastUpdatedDateTime" AS LastUpdatedDateTime
     FROM "PUB"."PV_SOrder" so
@@ -230,6 +231,13 @@ def create_shipreq_for_so_p2(
         or f"SO:{so_num}"
     ).strip()
 
+    # CustPOReleaseNum = Plant2 SO Header AddtCustRef (PO number)
+    cust_po_release = str(
+        _get_first(hdr, "AddtCustRef", "addtcustref", default="") or ""
+    ).strip()
+    if not cust_po_release:
+       logger.warning(f"Plant2 SO {so_num}: AddtCustRef is blank; CustPOReleaseNum will be blank in ShipReqLine.")
+
     logger.info(
         f"ShipReq SO {so_num}: ShippingRef resolved to '{cust_ref}'"
 )
@@ -263,8 +271,10 @@ def create_shipreq_for_so_p2(
                             "SOrderNum": int(so_num),
                             "ShipQty": ship_qty,
                             "ShipReqLineNum": 1,
+                            "CustPOLineNum": 1,
                             "ShipReqNum": "",
                             "ShippingRef": cust_ref,
+                            "CustPOReleaseNum": cust_po_release,
                             "WhouseCode": "",
                         }
                     ],

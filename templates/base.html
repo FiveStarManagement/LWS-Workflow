@@ -279,16 +279,39 @@
           <option value="job">JOB</option>
         </select>
 
-        <input class="gInput" type="text" name="q" placeholder="Search PolyTex SO / StarPak SO / PO / JOB…" />
+        <input class="gInput" type="text" name="q" placeholder="Search SO / PO / JOB…" />
         <button class="btn btn-ghost" type="submit">Search</button>
       </form>
 
       <a class="btn btn-ghost" href="/">Dashboard</a>
+      <a class="btn btn-ghost" href="http://fsmerppfup:9596/" target="_blank" rel="noopener">
+        QSB Admin
+      </a>
+
     </div>
   </div>
 </header>
 
 <div class="wrap">
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div style="margin-bottom:14px;">
+        {% for category, message in messages %}
+          <div class="card" style="
+            padding:12px 14px;
+            border-left:6px solid 
+              {% if category=='success' %}#16a34a{% elif category=='warning' %}#d97706{% else %}#2563eb{% endif %};
+          ">
+            <b style="text-transform:capitalize;">{{ category }}:</b> {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+
+
   {% block content %}{% endblock %}
 </div>
 

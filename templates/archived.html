@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="padding:14px 16px; margin-bottom:16px;">
+  <div class="cardHeader" style="margin-bottom:0;">
+    <div>
+      <h2 style="margin:0;">📦 Archived Orders</h2>
+      <p class="muted" style="margin:6px 0 0;">
+        COMPLETE orders automatically archived from monitoring list.
+      </p>
+    </div>
+
+    <a class="btn btn-secondary" href="/">⬅ Back to Dashboard</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="cardHeader">
+    <div class="muted small">Showing latest 500 archived orders</div>
+  </div>
+
+  <div class="tableWrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px;">PolyTex SO</th>
+          <th style="width:120px;">StarPak SO</th>
+          <th style="width:120px;">PO</th>
+          <th style="width:140px;">Job P4</th>
+          <th style="width:140px;">Job P2</th>
+          <th style="width:220px;">Archived</th>
+          <th style="width:220px;">Last Updated</th>
+          <th>Last Step</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% if archived and archived|length > 0 %}
+          {% for o in archived %}
+          <tr>
+            <td><a href="/order/{{ o.sordernum }}">{{ o.sordernum }}</a></td>
+            <td>{{ o.so_p2_num or "—" }}</td>
+            <td>{{ o.po_p4_num or "—" }}</td>
+            <td>{{ o.job_p4_code or "—" }}</td>
+            <td>{{ o.job_p2_code or "—" }}</td>
+
+            <td class="dtCell">
+              <div class="dtMain" data-iso="{{ o.archived_ts }}">{{ o.archived_ts|ct }} (CT)</div>
+              <div class="dtSub muted small rel"></div>
+            </td>
+
+            <td class="dtCell">
+              <div class="dtMain" data-iso="{{ o.updated_ts }}">{{ o.updated_ts|ct }} (CT)</div>
+              <div class="dtSub muted small rel"></div>
+            </td>
+
+            <td><b>{{ o.last_step }}</b></td>
+          </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="8" class="muted" style="padding:16px;">No archived orders found.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function relTime(iso) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return "";
+    const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+    if (diff < 60) return diff + " sec ago";
+    const m = Math.floor(diff/60);
+    if (m < 60) return m + " min ago";
+    const h = Math.floor(m/60);
+    if (h < 48) return h + " hr ago";
+    const days = Math.floor(h/24);
+    return days + " day" + (days > 1 ? "s" : "") + " ago";
+  }
+
+  document.querySelectorAll(".dtCell").forEach(cell => {
+    const main = cell.querySelector(".dtMain[data-iso]");
+    const sub = cell.querySelector(".rel");
+    if (main && sub) sub.textContent = relTime(main.dataset.iso);
+  });
+</script>
+
+{% endblock %}

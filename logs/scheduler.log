@@ -1,0 +1,1267 @@
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:05:03,070 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:05:03,075 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:05:03,075 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:05:03,539 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:05:03,591 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:05:03,596 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:05:03,618 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:05:03,703 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:05:03,805 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:05:03,833 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:05:03,875 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:05:03,875 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:05:03,898 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:05:04,419 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:05:04,437 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:05:04,688 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:05:04,726 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:15:02,607 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:15:02,612 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:15:02,612 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:15:03,086 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:15:03,133 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:15:03,133 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:15:03,156 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:15:03,223 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:15:03,272 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:15:03,293 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:15:03,314 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:15:03,314 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:15:03,337 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:15:03,776 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:15:03,791 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:15:04,038 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:15:04,058 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:25:02,524 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:25:02,528 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:25:02,529 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:25:02,922 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:25:02,969 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:25:02,970 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:25:02,992 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:25:03,063 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:25:03,110 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:25:03,124 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:25:03,137 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:25:03,137 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:25:03,151 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:25:03,481 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:25:03,504 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:25:03,734 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:25:03,748 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:35:02,538 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:35:02,543 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:35:02,544 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:35:03,126 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:35:03,180 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:35:03,180 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:35:03,202 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:35:03,270 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:35:03,344 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:35:03,364 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:35:03,378 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:35:03,378 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:35:03,395 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:35:03,852 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:35:03,870 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:35:04,229 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:35:04,260 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:45:02,503 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:45:02,508 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:45:02,509 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:45:03,487 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:45:03,561 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:45:03,562 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:45:03,623 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:45:03,691 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:45:03,808 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:45:03,831 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:45:03,848 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:45:03,848 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:45:03,864 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:45:04,283 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:45:04,297 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:45:04,534 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:45:04,561 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 00:55:02,485 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 00:55:02,490 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 00:55:02,490 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 00:55:02,904 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 00:55:02,951 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 00:55:02,952 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 00:55:02,973 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 00:55:03,041 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 00:55:03,095 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 00:55:03,113 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:55:03,133 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 00:55:03,133 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 00:55:03,148 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 00:55:03,462 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 00:55:03,476 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 00:55:03,699 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 00:55:03,711 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:05:02,551 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:05:02,556 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:05:02,557 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:05:02,987 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:05:03,045 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:05:03,045 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:05:03,067 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:05:03,136 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:05:03,233 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:05:03,257 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:05:03,280 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:05:03,280 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:05:03,306 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:05:03,828 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:05:03,847 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:05:04,152 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:05:04,176 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:15:02,544 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:15:02,549 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:15:02,550 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:15:02,960 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:15:03,016 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:15:03,017 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:15:03,038 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:15:03,106 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:15:03,185 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:15:03,216 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:15:03,235 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:15:03,235 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:15:03,257 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:15:03,721 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:15:03,772 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:15:04,020 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:15:04,039 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:25:02,563 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:25:02,568 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:25:02,569 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:25:02,979 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:25:03,030 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:25:03,030 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:25:03,056 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:25:03,128 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:25:03,176 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:25:03,193 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:25:03,206 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:25:03,206 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:25:03,220 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:25:03,535 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:25:03,548 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:25:03,807 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:25:03,823 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:35:02,532 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:35:02,537 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:35:02,537 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:35:02,930 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:35:02,974 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:35:02,974 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:35:02,995 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:35:03,064 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:35:03,107 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:35:03,123 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:35:03,138 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:35:03,138 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:35:03,151 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:35:03,512 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:35:03,531 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:35:03,774 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:35:03,790 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:45:03,094 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:45:03,100 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:45:03,101 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:45:03,513 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:45:03,568 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:45:03,568 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:45:03,589 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:45:03,660 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:45:03,711 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:45:03,726 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:45:03,741 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:45:03,741 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:45:03,799 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:45:04,262 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:45:04,277 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:45:04,486 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:45:04,500 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 01:55:02,614 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 01:55:02,619 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 01:55:02,620 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 01:55:03,001 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 01:55:03,091 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 01:55:03,091 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 01:55:03,117 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 01:55:03,186 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 01:55:03,270 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 01:55:03,286 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:55:03,296 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 01:55:03,296 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 01:55:03,311 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 01:55:03,780 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 01:55:03,793 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 01:55:04,037 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 01:55:04,060 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:05:02,535 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:05:02,540 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:05:02,540 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:05:02,934 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:05:02,985 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:05:02,985 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:05:03,007 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:05:03,078 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:05:03,153 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:05:03,171 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:05:03,201 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:05:03,202 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:05:03,219 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:05:03,561 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:05:03,577 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:05:03,844 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:05:03,859 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:15:02,487 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:15:02,492 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:15:02,492 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:15:02,932 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:15:02,995 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:15:02,995 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:15:03,017 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:15:03,087 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:15:03,192 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:15:03,222 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:15:03,260 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:15:03,260 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:15:03,313 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:15:03,686 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:15:03,705 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:15:04,047 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:15:04,066 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:25:02,686 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:25:02,691 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:25:02,691 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:25:03,163 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:25:03,213 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:25:03,214 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:25:03,236 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:25:03,302 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:25:03,356 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:25:03,385 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:25:03,404 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:25:03,404 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:25:03,418 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:25:03,774 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:25:03,798 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:25:04,069 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:25:04,091 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:35:02,462 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:35:02,467 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:35:02,467 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:35:02,905 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:35:02,991 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:35:02,991 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:35:03,024 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:35:03,093 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:35:03,191 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:35:03,225 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:35:03,245 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:35:03,245 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:35:03,266 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:35:03,834 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:35:03,860 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:35:04,189 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:35:04,205 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:45:02,484 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:45:02,489 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:45:02,490 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:45:03,024 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:45:03,083 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:45:03,083 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:45:03,109 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:45:03,179 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:45:03,249 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:45:03,273 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:45:03,290 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:45:03,290 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:45:03,320 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:45:03,885 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:45:03,908 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:45:04,167 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:45:04,181 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 02:55:02,476 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 02:55:02,481 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 02:55:02,482 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 02:55:02,902 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 02:55:02,952 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 02:55:02,952 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 02:55:02,983 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 02:55:03,053 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 02:55:03,156 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 02:55:03,182 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:55:03,195 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 02:55:03,195 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 02:55:03,212 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 02:55:03,741 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 02:55:03,762 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 02:55:04,109 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 02:55:04,124 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:05:02,506 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:05:02,511 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:05:02,512 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:05:02,954 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:05:03,019 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:05:03,019 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:05:03,041 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:05:03,108 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:05:03,169 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:05:03,187 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:05:03,201 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:05:03,201 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:05:03,224 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:05:03,683 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:05:03,697 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:05:03,908 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:05:03,923 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:15:02,586 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:15:02,593 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:15:02,594 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:15:03,003 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:15:03,043 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:15:03,043 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:15:03,063 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:15:03,133 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:15:03,188 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:15:03,207 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:15:03,222 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:15:03,222 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:15:03,244 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:15:03,738 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:15:03,751 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:15:03,979 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:15:03,994 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:25:02,598 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:25:02,603 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:25:02,604 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:25:03,023 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:25:03,100 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:25:03,100 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:25:03,120 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:25:03,190 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:25:03,261 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:25:03,285 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:25:03,309 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:25:03,309 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:25:03,343 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:25:03,783 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:25:03,801 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:25:04,064 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:25:04,078 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:35:02,580 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:35:02,585 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:35:02,585 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:35:03,090 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:35:03,140 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:35:03,140 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:35:03,161 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:35:03,229 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:35:03,279 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:35:03,293 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:35:03,313 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:35:03,314 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:35:03,326 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:35:03,747 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:35:03,769 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:35:04,038 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:35:04,062 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:45:02,624 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:45:02,630 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:45:02,631 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:45:03,082 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:45:03,193 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:45:03,193 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:45:03,215 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:45:03,285 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:45:03,340 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:45:03,361 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:45:03,386 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:45:03,386 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:45:03,407 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:45:04,075 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:45:04,092 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:45:04,367 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:45:04,396 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 03:55:02,580 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 03:55:02,585 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 03:55:02,585 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 03:55:03,003 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 03:55:03,054 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 03:55:03,054 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 03:55:03,080 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 03:55:03,149 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 03:55:03,208 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 03:55:03,238 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:55:03,249 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 03:55:03,249 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 03:55:03,264 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 03:55:03,651 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 03:55:03,687 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 03:55:04,078 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 03:55:04,102 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:05:02,589 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:05:02,594 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:05:02,595 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:05:03,003 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:05:03,052 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:05:03,052 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:05:03,073 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:05:03,142 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:05:03,210 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:05:03,230 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:05:03,248 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:05:03,248 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:05:03,269 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:05:03,721 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:05:03,740 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:05:03,976 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:05:03,993 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:15:02,614 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:15:02,619 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:15:02,620 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:15:03,036 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:15:03,130 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:15:03,131 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:15:03,154 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:15:03,225 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:15:03,318 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:15:03,354 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:15:03,370 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:15:03,370 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:15:03,388 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:15:04,250 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:15:04,275 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:15:04,546 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:15:04,573 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:25:02,541 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:25:02,546 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:25:02,546 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:25:03,088 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:25:03,136 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:25:03,136 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:25:03,160 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:25:03,229 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:25:03,274 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:25:03,290 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:25:03,304 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:25:03,304 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:25:03,334 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:25:03,871 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:25:03,893 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:25:04,160 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:25:04,175 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:35:02,592 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:35:02,598 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:35:02,599 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:35:03,087 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:35:03,145 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:35:03,146 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:35:03,168 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:35:03,240 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:35:03,306 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:35:03,348 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:35:03,370 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:35:03,370 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:35:03,407 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:35:03,888 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:35:03,910 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:35:04,350 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:35:04,381 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:45:02,673 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:45:02,678 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:45:02,679 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:45:03,104 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:45:03,186 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:45:03,186 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:45:03,206 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:45:03,277 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:45:03,360 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:45:03,379 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:45:03,398 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:45:03,398 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:45:03,421 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:45:04,037 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:45:04,063 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:45:04,390 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:45:04,454 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 04:55:02,577 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 04:55:02,582 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 04:55:02,583 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 04:55:03,032 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 04:55:03,099 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 04:55:03,099 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 04:55:03,119 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 04:55:03,187 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 04:55:03,253 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 04:55:03,273 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:55:03,290 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 04:55:03,290 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 04:55:03,304 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 04:55:03,762 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 04:55:03,782 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 04:55:04,042 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 04:55:04,075 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:05:02,676 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:05:02,681 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:05:02,682 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:05:03,108 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:05:03,178 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:05:03,179 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:05:03,200 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:05:03,274 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:05:03,342 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:05:03,400 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:05:03,422 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:05:03,422 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:05:03,446 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:05:04,126 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:05:04,167 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:05:04,467 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:05:04,492 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:15:02,502 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:15:02,507 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:15:02,507 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:15:02,936 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:15:02,989 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:15:02,990 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:15:03,010 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:15:03,079 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:15:03,177 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:15:03,204 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:15:03,230 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:15:03,230 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:15:03,254 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:15:03,869 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:15:03,897 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:15:04,209 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:15:04,250 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:25:02,555 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:25:02,563 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:25:02,563 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:25:02,996 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:25:03,041 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:25:03,042 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:25:03,066 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:25:03,137 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:25:03,199 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:25:03,251 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:25:03,272 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:25:03,272 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:25:03,297 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:25:03,958 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:25:03,993 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:25:04,346 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:25:04,373 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:35:02,705 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:35:02,710 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:35:02,711 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:35:03,136 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:35:03,188 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:35:03,189 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:35:03,212 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:35:03,282 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:35:03,354 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:35:03,370 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:35:03,382 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:35:03,382 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:35:03,412 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:35:04,066 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:35:04,093 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:35:04,401 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:35:04,421 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:45:02,603 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:45:02,608 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:45:02,609 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:45:03,062 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:45:03,117 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:45:03,118 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:45:03,140 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:45:03,212 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:45:03,287 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:45:03,309 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:45:03,339 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:45:03,340 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:45:03,359 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:45:03,924 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:45:03,941 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:45:04,234 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:45:04,261 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 05:55:02,612 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 05:55:02,618 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 05:55:02,618 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 05:55:03,133 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 05:55:03,191 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 05:55:03,191 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 05:55:03,213 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 05:55:03,286 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 05:55:03,342 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 05:55:03,361 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:55:03,378 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 05:55:03,379 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 05:55:03,392 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 05:55:03,788 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 05:55:03,805 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 05:55:04,041 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 05:55:04,068 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:05:02,574 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:05:02,578 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:05:02,578 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:05:03,021 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:05:03,079 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:05:03,080 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:05:03,101 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:05:03,171 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:05:03,229 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:05:03,250 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:05:03,264 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:05:03,265 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:05:03,284 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:05:03,745 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:05:03,766 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:05:04,050 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:05:04,073 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:15:02,555 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:15:02,575 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:15:02,575 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:15:03,002 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:15:03,050 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:15:03,051 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:15:03,079 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:15:03,152 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:15:03,238 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:15:03,254 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:15:03,265 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:15:03,265 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:15:03,280 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:15:03,842 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:15:03,862 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:15:04,252 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:15:04,276 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:25:02,544 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:25:02,548 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:25:02,549 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:25:02,956 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:25:02,996 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:25:02,997 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:25:03,029 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:25:03,096 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:25:03,142 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:25:03,166 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:25:03,180 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:25:03,180 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:25:03,191 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:25:03,517 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:25:03,535 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:25:03,796 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:25:03,844 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:35:02,671 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:35:02,676 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:35:02,677 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:35:03,072 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:35:03,122 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:35:03,122 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:35:03,143 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:35:03,213 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:35:03,319 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:35:03,342 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:35:03,360 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:35:03,360 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:35:03,377 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:35:03,713 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:35:03,735 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:35:03,979 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:35:03,996 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:45:02,614 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:45:02,619 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:45:02,619 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:45:03,032 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:45:03,080 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:45:03,080 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:45:03,101 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:45:03,170 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:45:03,223 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:45:03,240 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:45:03,260 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:45:03,260 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:45:03,278 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:45:03,580 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:45:03,594 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:45:03,834 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:45:03,857 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 06:55:02,597 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 06:55:02,602 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 06:55:02,603 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 06:55:03,015 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 06:55:03,079 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 06:55:03,080 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 06:55:03,104 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 06:55:03,172 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 06:55:03,223 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 06:55:03,265 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:55:03,276 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 06:55:03,276 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 06:55:03,289 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 06:55:03,664 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 06:55:03,692 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 06:55:03,955 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 06:55:03,971 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:05:02,657 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:05:02,662 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:05:02,663 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:05:03,083 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:05:03,155 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:05:03,155 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:05:03,180 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:05:03,252 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:05:03,322 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:05:03,347 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:05:03,381 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:05:03,381 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:05:03,432 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:05:04,047 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:05:04,069 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:05:04,430 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:05:04,451 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:15:02,692 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:15:02,699 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:15:02,700 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:15:03,134 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:15:03,190 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:15:03,190 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:15:03,212 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:15:03,281 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:15:03,354 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:15:03,378 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:15:03,399 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:15:03,399 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:15:03,415 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:15:03,883 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:15:03,900 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:15:04,121 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:15:04,135 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:25:02,623 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:25:02,627 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:25:02,628 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:25:03,033 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:25:03,075 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:25:03,076 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:25:03,097 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:25:03,167 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:25:03,232 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:25:03,245 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:25:03,259 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:25:03,259 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:25:03,275 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:25:03,600 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:25:03,626 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:25:03,988 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:25:04,010 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:35:02,640 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:35:02,645 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:35:02,645 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:35:03,384 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:35:03,442 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:35:03,443 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:35:03,468 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:35:03,540 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:35:03,622 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:35:03,640 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:35:03,653 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:35:03,653 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:35:03,672 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:35:04,143 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:35:04,162 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:35:04,469 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:35:04,487 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:45:02,643 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:45:02,660 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:45:02,661 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:45:03,116 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:45:03,170 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:45:03,170 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:45:03,194 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:45:03,275 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:45:03,331 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:45:03,351 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:45:03,366 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:45:03,366 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:45:03,384 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:45:03,699 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:45:03,718 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:45:03,948 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:45:03,964 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 07:55:02,691 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 07:55:02,696 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 07:55:02,696 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 07:55:03,105 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 07:55:03,146 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 07:55:03,146 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 07:55:03,169 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 07:55:03,237 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 07:55:03,318 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 07:55:03,352 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:55:03,369 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 07:55:03,369 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 07:55:03,411 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 07:55:03,809 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 07:55:03,850 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 07:55:04,223 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 07:55:04,251 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:05:02,803 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:05:02,808 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:05:02,808 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:05:03,337 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:05:03,405 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:05:03,405 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:05:03,433 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:05:03,506 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:05:03,606 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 08:05:03,647 | ERROR | app | PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 08:05:03,674 | INFO | app | [FILM VALIDATION EMAIL] Duplicate suppressed for SO=251207 (sent_ts=2026-01-21T18:45:17) sig=3fe6ccf6f4243f41e8ea5963ac0724f88a2856f0
+2026-01-22 08:05:03,674 | ERROR | app | Order 251207 FAILED at REQS_P4: PRINTED_FILM_MISMATCH: SO=251207 BASE=2300-ALP41-0012 Expected=16P4-2300-ALP41-0012 InvalidPrinted=['16P4-2300-ALP41-0015'] AllPrinted=['16P4-2300-ALP41-0015']
+2026-01-22 08:05:03,691 | INFO | app | [FAIL EMAIL] Skipping duplicate failure email for SO 251207 (same signature).
+2026-01-22 08:05:04,107 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:05:04,129 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:05:04,596 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:05:04,613 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:15:02,767 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:15:02,772 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:15:02,772 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:15:03,213 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:15:03,268 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:15:03,268 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:15:03,290 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:15:03,358 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:15:03,439 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 08:15:03,455 | INFO | app | [FILM VALIDATION ✅] so=251207 base=2300-ALP41-0012 expected=16P4-2300-ALP41-0012 printed_found=['16P4-2300-ALP41-0012']
+2026-01-22 08:15:04,843 | INFO | app | Forced Plant2 SO 251212 to AUTHORIZED (sorderstat=0).
+2026-01-22 08:15:04,847 | INFO | app | Set PolyTex PO 246708 to CONFIRMED (porderstat=2).
+2026-01-22 08:15:04,977 | INFO | app | ShipReq SO 251212: ShippingRef resolved to 'ALP237'
+2026-01-22 08:15:04,977 | INFO | app | Creating ShipReq for Plant2 SO 251212 (item=1600-2300-ALP41-0012, qty=518173.0, ship_date=2026-02-03)
+2026-01-22 08:15:05,023 | INFO | app | ShipReq created for SO 251212: ShipReqNum=574609
+2026-01-22 08:15:05,057 | INFO | job_p2 | Creating Plant2 job for SO 251212
+2026-01-22 08:15:06,748 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:15:06,770 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:15:07,135 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:15:07,153 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:25:02,587 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:25:02,591 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:25:02,592 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:25:03,036 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:25:03,088 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:25:03,089 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:25:03,115 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:25:03,185 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:25:03,275 | INFO | job_p4 | Existing Plant4 job found for SO 251207: 907822
+2026-01-22 08:25:03,298 | INFO | app | [FILM VALIDATION ✅] so=251207 base=2300-ALP41-0012 expected=16P4-2300-ALP41-0012 printed_found=['16P4-2300-ALP41-0012']
+2026-01-22 08:25:03,476 | INFO | app | Forced Plant2 SO 251212 to AUTHORIZED (sorderstat=0).
+2026-01-22 08:25:03,479 | INFO | app | Set PolyTex PO 246708 to CONFIRMED (porderstat=2).
+2026-01-22 08:25:03,516 | INFO | app | ShipReq already exists for Plant2 SO 251212: ShipReqNum=574609 (skip create)
+2026-01-22 08:25:03,525 | INFO | job_p2 | Existing Plant2 job found for SO 251212: 907840
+2026-01-22 08:25:03,989 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:25:04,010 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:25:04,308 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:25:04,328 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:35:02,582 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:35:02,587 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:35:02,588 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:35:03,135 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:35:03,195 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:35:03,196 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:35:03,217 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:35:03,285 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:35:03,752 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:35:03,798 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:35:04,057 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:35:04,076 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:45:02,857 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:45:02,861 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:45:02,861 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:45:03,665 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:45:03,715 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:45:03,715 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:45:03,742 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:45:03,813 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:45:04,363 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:45:04,378 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:45:04,711 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:45:04,744 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 08:55:02,614 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 08:55:02,619 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 08:55:02,620 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 08:55:03,196 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 08:55:03,484 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 08:55:03,484 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 08:55:03,514 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 08:55:03,582 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 08:55:04,483 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 08:55:04,541 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 08:55:04,896 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 08:55:04,939 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 09:05:02,551 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 09:05:02,556 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 09:05:02,557 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 09:05:03,060 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 09:05:03,133 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 09:05:03,134 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 09:05:03,154 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 09:05:03,224 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 09:05:03,770 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 09:05:03,800 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 09:05:04,127 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 09:05:04,159 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 
+====================================================== 
+===== RUN START: +  User: rdevelopment ===== 
+====================================================== 
+2026-01-22 09:15:02,602 | INFO | app | [ENV] Workflow running in ENV=LIVE
+2026-01-22 09:15:02,607 | INFO | app | [ARCHIVE] No COMPLETE orders eligible for archiving.
+2026-01-22 09:15:02,608 | INFO | app | [MAINT] No run history eligible for purging.
+2026-01-22 09:15:03,078 | INFO | job_p4 | Existing Plant4 job found for SO 250351: 907108
+2026-01-22 09:15:03,145 | INFO | app | [Phase2B FETCH] so4=250351 job=907108 rows=1 groups=['P4-PF']
+2026-01-22 09:15:03,145 | INFO | app | [Phase2B] WAITING_POLYTEX_RECONFIRM: so4=250351 job=907108 item=16P4-2300-JMS01-0078 reqgroup=P4-PF snapshot_qty=410364.0 pvreq_qty=410364.0 (PV_Req unchanged; skipping Phase2B)
+2026-01-22 09:15:03,179 | INFO | eligibility | Eligible LWS SOs since 12/26/2025: 200
+2026-01-22 09:15:03,247 | INFO | app | [REMOVED] Skipping removed orders: [250666, 250506, 250504]
+2026-01-22 09:15:03,669 | INFO | job_p4 | Existing Plant4 job found for SO 251044: 907736
+2026-01-22 09:15:03,714 | INFO | app | [FILM VALIDATION ✅] so=251044 base=2300-ALP41-0015 expected=16P4-2300-ALP41-0015 printed_found=['16P4-2300-ALP41-0015']
+2026-01-22 09:15:04,087 | INFO | job_p4 | Existing Plant4 job found for SO 251043: 907737
+2026-01-22 09:15:04,107 | INFO | app | [FILM VALIDATION ✅] so=251043 base=2300-ALP41-0016 expected=16P4-2300-ALP41-0016 printed_found=['16P4-2300-ALP41-0016']
+====================================================== 
+===== RUN END: +  ExitCode=0 ===== 
+====================================================== 

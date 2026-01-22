@@ -67,7 +67,18 @@
         {% if orders and orders|length > 0 %}
           {% for o in orders %}
           <tr>
-            <td><a href="/order/{{ o.sordernum }}">{{ o.sordernum }}</a></td>
+            <td class="nowrap">
+            <!-- Default Admin Order Detail link -->
+            <a href="/order/{{ o.sordernum }}"><b>{{ o.sordernum }}</b></a>
+
+            <!-- External ERP link (icon) -->
+            <a href="http://fsmerppfup:5557/?sales_order_number={{ o.sordernum }}"
+              target="_blank"
+              title="Open in ERP"
+              style="margin-left:6px; text-decoration:none; font-size:14px;">
+              🔗
+            </a>
+          </td>
             <td class="muted nowrap" title="{{ o.polytex_item_code }}">
               {{ o.polytex_item_code or "—" }}
             </td>

@@ -1,11 +1,18 @@
-from flask import Flask, render_template, redirect, url_for, request
+#admin.py
+from flask import Flask, render_template, redirect, url_for, request, flash
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
-from config import STATE_DB_PATH
-from db import state_conn, init_state_db  # <-- shared DB module
+from config import STATE_DB_PATH, get_readonly_conn
+from db import state_conn, init_state_db, rquery, upsert_order_state
+
+
+from config import get_readonly_conn
+from db import rquery
+
 
 app = Flask(__name__)
+app.secret_key = "lws-admin-secret"  # can also use env var later
 
 # IMPORTANT: waitress imports the module; it does NOT run __main__
 # So we initialize schema + indexes at import time.
@@ -18,6 +25,27 @@ def db():
 
 
 CT = ZoneInfo("America/Chicago")
+
+VALID_LWS_SO_SQL = """
+SELECT DISTINCT so."SOrderNum" AS SOrderNum
+FROM "PUB"."PV_SOrder" so
+JOIN "PUB"."PV_SOrderLine" sol
+  ON so."CompNum" = sol."CompNum"
+ AND so."PlantCode" = sol."PlantCode"
+ AND so."SOrderNum" = sol."SOrderNum"
+JOIN "PUB"."PM_Item" it
+  ON it."CompNum" = so."CompNum"
+ AND it."ItemCode" = sol."ItemCode"
+WHERE so."CompNum" = 2
+  AND so."PlantCode" = '4'
+  AND so."SOSourceCode" = 'LWS'
+  AND so."SOrderStat" IN (0,1,2)
+  AND it."ProdGroupCode" = 'P4-LWS'
+  AND so."SOrderNum" = ?
+ORDER BY so."SOrderNum" DESC
+"""
+
+
 
 def _to_dt_utc(value):
     # value can be ISO string or datetime
@@ -50,14 +78,6 @@ def _parse_ts(value):
         return None
 
 
-# @app.template_filter("pretty_ts")
-# def pretty_ts(value):
-#     dt = _parse_ts(value)
-#     if not dt:
-#         return "—"
-#     if dt.tzinfo is None:
-#         dt = dt.replace(tzinfo=timezone.utc)
-#     return dt.astimezone(timezone.utc).strftime("%b %d, %Y • %I:%M %p (UTC)")
 
 
 @app.template_filter("duration_s")
@@ -77,13 +97,53 @@ def dashboard():
     q = (request.args.get("q") or "").strip()
     mode = (request.args.get("mode") or "any").strip().lower()
 
+    # ✅ Parse hide_empty correctly
+    hide_vals = request.args.getlist("hide_empty")
+    if not hide_vals:
+        hide_empty = True
+    else:
+        hide_empty = "1" in hide_vals
+
+
     conn = db()
+    # --------------------------------------------------------
+    # ✅ Active Held Orders Widget (Phase2 HOLD + other HOLD)
+    # --------------------------------------------------------
+    held_orders = conn.execute("""
+        SELECT
+            sordernum,
+            so_p2_num,
+            po_p4_num,
+            job_p4_code,
+            job_p2_code,
+            status,
+            last_step,
+            updated_ts,
+            last_error_summary
+        FROM lws_order_state
+        WHERE status = 'HOLD'
+        ORDER BY updated_ts DESC
+        LIMIT 50
+    """).fetchall()
+
 
     if not q:
-        runs = conn.execute(
-            "SELECT * FROM workflow_runs ORDER BY start_ts DESC LIMIT 25"
-        ).fetchall()
+        if hide_empty:
+            runs = conn.execute("""
+                SELECT *
+                FROM workflow_runs
+                WHERE COALESCE(eligible_count,0) > 0
+                OR COALESCE(processed_count,0) > 0
+                OR COALESCE(failed_count,0) > 0
+                ORDER BY start_ts DESC
+                LIMIT 25
+            """).fetchall()
+        else:
+            runs = conn.execute(
+                "SELECT * FROM workflow_runs ORDER BY start_ts DESC LIMIT 25"
+            ).fetchall()
         match_count = None
+
     else:
         like = f"%{q}%"
         where_parts = []
@@ -140,16 +200,86 @@ def dashboard():
             WHERE ({where_sql})
         """, params).fetchone()["cnt"]
 
+    # --------------------------------------------------------
+    # ✅ Dashboard Insights Stats (Today + All-Time) — LWS
+    # --------------------------------------------------------
+
+    # Today totals (unique orders touched today)
+    today_total_orders = conn.execute("""
+        SELECT COUNT(DISTINCT sordernum) AS cnt
+        FROM run_orders
+        WHERE updated_ts >= datetime('now','start of day')
+          AND updated_ts <  datetime('now','start of day','+1 day')
+    """).fetchone()["cnt"] or 0
+
+    today_processed_orders = conn.execute("""
+        SELECT COUNT(DISTINCT sordernum) AS cnt
+        FROM run_orders
+        WHERE updated_ts >= datetime('now','start of day')
+          AND updated_ts <  datetime('now','start of day','+1 day')
+          AND status IN ('COMPLETE','SKIPPED','HOLD','FAILED')
+    """).fetchone()["cnt"] or 0
+
+    today_complete_orders = conn.execute("""
+        SELECT COUNT(DISTINCT sordernum) AS cnt
+        FROM run_orders
+        WHERE updated_ts >= datetime('now','start of day')
+          AND updated_ts <  datetime('now','start of day','+1 day')
+          AND status = 'COMPLETE'
+    """).fetchone()["cnt"] or 0
+
+    # All-time totals (active + archived)
+    total_orders_all_time = conn.execute("""
+        SELECT
+            (SELECT COUNT(*) FROM lws_order_state)
+          + (SELECT COUNT(*) FROM lws_order_state_archive)
+        AS cnt
+    """).fetchone()["cnt"] or 0
+
+    total_complete_all_time = conn.execute("""
+        SELECT
+            (SELECT COUNT(*) FROM lws_order_state WHERE UPPER(status)='COMPLETE')
+          + (SELECT COUNT(*) FROM lws_order_state_archive WHERE UPPER(status)='COMPLETE')
+        AS cnt
+    """).fetchone()["cnt"] or 0
+
+    total_hold_all_time = conn.execute("""
+        SELECT
+            (SELECT COUNT(*) FROM lws_order_state WHERE UPPER(status)='HOLD')
+          + (SELECT COUNT(*) FROM lws_order_state_archive WHERE UPPER(status)='HOLD')
+        AS cnt
+    """).fetchone()["cnt"] or 0
+
+    total_failed_all_time = conn.execute("""
+        SELECT
+            (SELECT COUNT(*) FROM lws_order_state WHERE UPPER(status)='FAILED')
+          + (SELECT COUNT(*) FROM lws_order_state_archive WHERE UPPER(status)='FAILED')
+        AS cnt
+    """).fetchone()["cnt"] or 0
+
     conn.close()
 
     return render_template(
         "dashboard.html",
         runs=runs,
+        held_orders=held_orders, 
         q=q,
         mode=mode,
+        hide_empty=hide_empty,
         match_count=match_count,
         db_path=STATE_DB_PATH,
+
+        # ✅ Insights (Today + All-Time)
+        today_total_orders=today_total_orders,
+        today_processed_orders=today_processed_orders,
+        today_complete_orders=today_complete_orders,
+        total_orders_all_time=total_orders_all_time,
+        total_complete_all_time=total_complete_all_time,
+        total_hold_all_time=total_hold_all_time,
+        total_failed_all_time=total_failed_all_time,
     )
+
+
 
 
 @app.route("/run/<run_id>")
@@ -184,6 +314,32 @@ def run_detail(run_id):
     return render_template("run_detail.html", run=run, orders=orders)
 
 
+@app.route("/archived")
+def archived_orders():
+    conn = db()
+
+    archived = conn.execute("""
+        SELECT
+            sordernum,
+            so_p2_num,
+            po_p4_num,
+            job_p4_code,
+            job_p2_code,
+            status,
+            last_step,
+            updated_ts,
+            archived_ts,
+            last_error_summary
+        FROM lws_order_state_archive
+        ORDER BY archived_ts DESC
+        LIMIT 500
+    """).fetchall()
+
+    conn.close()
+
+    return render_template("archived.html", archived=archived)
+
+
 @app.route("/order/<int:sordernum>")
 def order_detail(sordernum):
     conn = db()
@@ -195,6 +351,9 @@ def order_detail(sordernum):
     return render_template("order_detail.html", order=order)
 
 
+
+
+
 @app.route("/order/<int:sordernum>/retry")
 def order_retry(sordernum):
     conn = db()
@@ -202,13 +361,111 @@ def order_retry(sordernum):
         UPDATE lws_order_state
         SET status='NEW',
             last_step='ELIGIBLE',
+            last_run_id=NULL,
             last_error_summary=NULL,
-            last_api_messages=NULL
+
+            -- API details
+            last_api_entity=NULL,
+            last_api_status=NULL,
+            last_api_error_message=NULL,
+            last_api_messages=NULL,
+            last_api_raw=NULL,
+
+            -- failure email dedupe
+            last_failed_sig=NULL,
+            last_failed_email_ts=NULL,
+
+            -- hold aging
+            hold_since_ts=NULL,
+            last_hold_reminder_ts=NULL,
+            hold_escalated_ts=NULL,
+
+            updated_ts=datetime('now')
         WHERE sordernum=?
     """, (sordernum,))
     conn.commit()
     conn.close()
     return redirect(url_for("order_detail", sordernum=sordernum))
+
+
+
+@app.route("/order/<int:sordernum>/remove", methods=["POST"])
+def order_remove(sordernum):
+    # 1) Always UPSERT into active state so REMOVED sticks
+    upsert_order_state(
+        sordernum=sordernum,
+        status="REMOVED",
+        last_step="REMOVED_BY_USER",
+        last_error_summary="Removed by user",
+        last_api_messages_json=None,
+    )
+
+    # 2) Also disable manual queue entry if your LWS schema has it
+    # (this prevents "manual priority" from resurrecting it)
+    conn = db()
+    try:
+        conn.execute("""
+            UPDATE lws_manual_queue
+            SET status='REMOVED'
+            WHERE sordernum=?
+        """, (sordernum,))
+        conn.commit()
+    except Exception:
+        
+        pass
+    finally:
+        conn.close()
+
+    flash(
+        "Removed from workflow. This order will not be auto-processed. Use Retry Next Run to resume.",
+        "success"
+    )
+    return redirect(url_for("order_detail", sordernum=sordernum))
+
+
+
+@app.route("/order/run_now", methods=["POST"])
+def order_run_now():
+    conn = db()
+
+    so4 = request.form.get("so4", "").strip()
+    if not so4.isdigit():
+        conn.close()
+        flash("Please enter a valid PolyTex SO number.", "warning")
+        return redirect(url_for("dashboard"))
+
+    so4 = int(so4)
+
+    # ✅ Validate this is a real / valid LWS SO in Radius
+    ro_conn = get_readonly_conn()
+    try:
+        rows = rquery(ro_conn, VALID_LWS_SO_SQL, (so4,))
+    finally:
+        ro_conn.close()
+
+    if not rows:
+        conn.close()
+        flash(
+            f"SO {so4} is not a valid LWS order (Plant 4 / Source=LWS / ProdGroup=P4-LWS).",
+            "warning"
+        )
+        return redirect(url_for("dashboard"))
+
+    # ✅ UPSERT into SQLite state so it works even if SO never ran before
+    conn.close()
+
+    upsert_order_state(
+        sordernum=so4,
+        status="NEW",
+        last_step="ELIGIBLE",
+        last_error_summary=None,
+        last_api_messages_json=None,
+    )
+
+    flash(f"SO {so4} queued for next workflow run.", "success")
+    return redirect(url_for("order_detail", sordernum=so4))
+
+
 
 
 if __name__ == "__main__":

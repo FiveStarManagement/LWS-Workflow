@@ -1,0 +1,9 @@
+========================================================= 
+===== HOLD SUMMARY START: +  User=rdevelopment ===== 
+========================================================= 
+2026-01-22 06:00:05,216 | INFO | emailer | Email sent: LWS Daily HOLD Summary – PolyTex=1, StarPak=0 -> ['oft@fivestarmanagement.com', 'ukalidas@fivestarmanagement.com', 'mbravo@fivestarmanagement.com']
+2026-01-22 06:00:05,216 | INFO | daily_hold_summary | Sent daily summary email to ['oft@fivestarmanagement.com', 'ukalidas@fivestarmanagement.com', 'mbravo@fivestarmanagement.com']
+========================================================= 
+===== HOLD SUMMARY END: +  ExitCode=0 ===== 
+========================================================= 
+ 

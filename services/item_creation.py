@@ -1,3 +1,5 @@
+#services\item_creation/py
+
 from __future__ import annotations
 
 import json
@@ -280,10 +282,11 @@ def mutate_for_polytex_rm(parsed: Dict[str, Any], pt_itemcode: str) -> Dict[str,
 
     xl_item["CompNum"] = 2
     xl_item["ItemCode"] = pt_itemcode
+    xl_item["ItemShortDesc"] = pt_itemcode
     xl_item["EstimateUse"] = 101
     xl_item["AutoRequisition"] = 1
     xl_item["ClassId"] = 1
-    xl_item["RollType"] = 0
+    xl_item["RollType"] = 1
     xl_item["ItemStatusCode"] = "WAIT"
     xl_item["AutoReserve"] = 0
     xl_item["FixedCost"] = 1
@@ -300,7 +303,7 @@ def mutate_for_polytex_rm(parsed: Dict[str, Any], pt_itemcode: str) -> Dict[str,
     xl_item["MasterEstimateCode"] = ""
     xl_item["ItemGroupCode"] = "P4-F29"
     xl_item["ItemTypeCode"] = "PrintOPP"
-    xl_item["ReqGroupCode"] = "P4-FILM"
+    xl_item["ReqGroupCode"] = "P4-PF"
     xl_item["GTIN"] = "0"
     xl_item["OuterLabelCode"] = ""
     xl_item["MinorProductGroup"] = ""
@@ -318,6 +321,7 @@ def mutate_for_polytex_rm(parsed: Dict[str, Any], pt_itemcode: str) -> Dict[str,
     xl_item["Weight"] = 0
     xl_item["WeightPer"] = 0
     xl_item["WeightUnitCode"] = ""
+    xl_item["MRPItem"] = "false"
 
     # Reset arrays exactly like script
     xl_item["XLUDEElements"] = [
@@ -385,17 +389,19 @@ def mutate_for_starpak_fg(parsed: Dict[str, Any], sp_itemcode: str) -> Dict[str,
     xl_item["ReqGroupCode"] = "FIN ROLL"
     xl_item["CustCode"] = "POL01"
     xl_item["ItemStatusCode"] = "WAIT"
+    xl_item["EstimateUse"] = 601
     xl_item["AutoReserve"] = 0
-    xl_item["FixedCost"] = 1
-    xl_item["AutoActual"] = 2
+    xl_item["FixedCost"] = 0
+    xl_item["AutoActual"] = 0
     xl_item["Produced"] = "true"
+    xl_item["Purchased"] = "false"
     xl_item["Issued"] = "false"
     xl_item["Sold"] = "true"
     xl_item["MasterEstimateCode"] = ""
     xl_item["ItemGroupCode"] = "FG_L_TOL"
     xl_item["ItemTypeCode"] = "PRT ROLL"
-    xl_item["GTIN"] = "0"
-    xl_item["OuterLabelCode"] = ""
+    # xl_item["GTIN"] = "0"
+    xl_item["OuterLabelCode"] = "RLPOL02"
     xl_item["MinorProductGroup"] = "PRTFILM"
     xl_item["SuccessorItemCode"] = ""
     xl_item["PreviousItemCode"] = ""
@@ -408,7 +414,8 @@ def mutate_for_starpak_fg(parsed: Dict[str, Any], sp_itemcode: str) -> Dict[str,
     xl_item["Weight"] = 0
     xl_item["WeightPer"] = 0
     xl_item["WeightUnitCode"] = ""
-    
+    xl_item["MRPItem"] = "false"
+        
 
     return parsed
 
@@ -518,19 +525,68 @@ def create_pt_and_sp_items_from_so_itemcode(
         report.add(spSubstrate1, 2, "Create SP FG Item (1600)", False, str(e))
         raise
 
-    # Notify CSR that items were created in WAIT
+    # Notify CSR that items were created in WAIT (House Style)
     try:
         html = f"""
-        <div style="font-family:Segoe UI,Arial,sans-serif; max-width:900px;">
-          <h2 style="margin:0 0 8px;">LWS — Items Created (WAIT)</h2>
-          <p><b>SO (Plant4):</b> {sordernum}</p>
-          <p><b>PolyTex RM Item:</b> {ptSubstrate1} (WAIT)</p>
-          <p><b>StarPak FG Item:</b> {spSubstrate1} (WAIT)</p>
-          <p style="color:#b00020;"><b>Action:</b> Approve items (set status to APP) before workflow continues.</p>
+        <div style="font-family:Segoe UI,Arial,sans-serif; max-width:900px; margin:0 auto;">
+          
+          <div style="padding:18px 20px; border:1px solid #e5e7eb; border-radius:12px; background:#ffffff;">
+            
+            <h2 style="margin:0; font-size:22px; color:#111827;">
+              📌 LWS Workflow — New Items Created (WAIT Approval Required)
+            </h2>
+
+            <p style="margin:10px 0 0; font-size:14px; color:#374151;">
+              The workflow detected missing required items and created them automatically in <b>WAIT</b> status.
+              The workflow will remain paused until both items are reviewed and approved.
+            </p>
+
+            <div style="margin-top:14px; padding:14px; border:1px solid #e5e7eb; background:#f9fafb; border-radius:10px;">
+              <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                <tr>
+                  <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb; width:220px;"><b>PolyTex SO (Plant 4)</b></td>
+                  <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb;">{sordernum}</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb;"><b>PolyTex RM Item (Plant 4)</b></td>
+                  <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb;">
+                    {ptSubstrate1}
+                    <span style="margin-left:10px; display:inline-block; padding:3px 10px; border-radius:999px; background:#fff7ed; color:#9a3412; font-weight:600;">
+                      WAIT
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px;"><b>StarPak FG Item (Plant 2)</b></td>
+                  <td style="padding:8px 10px;">
+                    {spSubstrate1}
+                    <span style="margin-left:10px; display:inline-block; padding:3px 10px; border-radius:999px; background:#fff7ed; color:#9a3412; font-weight:600;">
+                      WAIT
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div style="margin-top:14px; padding:14px; border-left:4px solid #f59e0b; background:#fff7ed; border-radius:8px;">
+              <b style="color:#92400e;">Next Step:</b>
+              <div style="margin-top:6px; color:#111827; font-size:14px;">
+                Please review the items in Radius and approve them (change status to <b>APP</b>).
+                Once approved, the workflow will resume automatically on the next scheduled run.
+              </div>
+            </div>
+
+            <div style="margin-top:18px; font-size:12px; color:#6b7280; border-top:1px solid #e5e7eb; padding-top:12px;">
+              This email was generated automatically by the LWS Workflow Monitor.
+            </div>
+          </div>
+
         </div>
         """
-        send_email(CSR_EMAILS, f"LWS: Items Created (WAIT) - SO {sordernum}", html)
+        send_email(CSR_EMAILS, f"Action Required – Approve New Items (WAIT) – SO {sordernum}", html)
+
     except Exception as e:
         log.warning(f"Failed to send CSR email for item create SO {sordernum}: {e}")
+
 
     return report

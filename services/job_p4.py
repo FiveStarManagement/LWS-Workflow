@@ -1,10 +1,12 @@
 # lws_workflow/services/job_p4.py
 
 from typing import Optional
+import html
 
 from api import send_post_request, decode_generic, b64_json
 from db import rquery
 from logger import get_logger
+
 
 log = get_logger("job_p4")
 
@@ -12,6 +14,43 @@ log = get_logger("job_p4")
 class JobHold(Exception):
     """Use when AOP returns a meaningful reason but no job is created."""
     pass
+
+def _raise_aop_error(
+    *,
+    exc_cls,
+    message: str,
+    resp,
+    decoded,
+    decoded_payload=None,
+):
+    """
+    Raise an exception that carries raw API response + decoded details so fail_order()
+    can always include them in the admin email.
+    """
+    ex = exc_cls(message)
+
+    # Consistent fields that fail_order() knows how to use
+    ex.api_entity = "AdvancedOrderProcessing"
+    ex.api_status = getattr(decoded, "status_code", None)
+    ex.api_messages = getattr(decoded, "messages", None)
+
+    # If decode_generic exposes envelope error message, capture it too
+    env_err = getattr(decoded, "error_message", None)
+    if env_err:
+        ex.api_error_message = str(env_err)
+
+    # Raw response text (best for email)
+    try:
+        ex.raw_response_text = resp.text
+    except Exception:
+        ex.raw_response_text = str(resp)
+
+    # Optional: attach decoded payload if caller passes it
+    if decoded_payload is not None:
+        ex.decoded_payload = decoded_payload
+
+    raise ex
+
 
 
 def find_existing_job_p4(conn, sordernum: int) -> Optional[str]:
@@ -69,12 +108,18 @@ def create_job_p4(sordernum: int, customer: str, logger) -> str:
         grp_fail = grp.get("Failed")
         aop_status = (dp.get("AdvancedOrderProcessing", {}) or {}).get("Status")
 
-        raise RuntimeError(
-            "JOB_P4 did not produce a Job Code. "
-            "AdvancedOrderProcessing returned no Results. "
-            f"(efiStatusCode={decoded.status_code}, AOPStatus={aop_status}, "
-            f"RequirementsTotal={req_total}, GroupsTotal={grp_total}, "
-            f"GroupsSuccessful={grp_succ}, GroupsFailed={grp_fail})"
+        _raise_aop_error(
+            exc_cls=RuntimeError,
+            message=(
+                "JOB_P4 did not produce a Job Code. "
+                "AdvancedOrderProcessing returned no Results. "
+                f"(efiStatusCode={decoded.status_code}, AOPStatus={aop_status}, "
+                f"RequirementsTotal={req_total}, GroupsTotal={grp_total}, "
+                f"GroupsSuccessful={grp_succ}, GroupsFailed={grp_fail})"
+            ),
+            resp=resp,
+            decoded=decoded,
+            decoded_payload=dp,
         )
 
     r0 = results[0]
@@ -87,7 +132,15 @@ def create_job_p4(sordernum: int, customer: str, logger) -> str:
         or ""
     )
     if errors:
-        raise JobHold(str(errors).strip())
+        # Preserve the nice "meaningful reason" behavior (HOLD), but include API response for email/debug
+        _raise_aop_error(
+            exc_cls=JobHold,
+            message=str(errors).strip(),
+            resp=resp,
+            decoded=decoded,
+            decoded_payload=dp,
+        )
+
 
     # Success if Job Code present
     job_code = (
@@ -96,9 +149,15 @@ def create_job_p4(sordernum: int, customer: str, logger) -> str:
         or r0.get("jobcode")
     )
     if not job_code:
-        raise RuntimeError(
-            "JOB_P4 did not produce a Job Code. "
-            f"Results[0] present but Job Code missing. Keys={list(r0.keys())}"
+        _raise_aop_error(
+            exc_cls=RuntimeError,
+            message=(
+                "JOB_P4 did not produce a Job Code. "
+                f"Results[0] present but Job Code missing. Keys={list(r0.keys())}"
+            ),
+            resp=resp,
+            decoded=decoded,
+            decoded_payload=dp,
         )
 
     log.info(f"Plant4 job created for SO {sordernum}: JobCode={job_code}")

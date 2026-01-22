@@ -1,0 +1,131 @@
+    "XLSOrders": {
+      "XLSOrder": [
+        {
+ 
+          "CompNum": 2,
+    
+          "PlantCode": "2",
+
+          "SOrderNum": 247323,
+        
+        }
+      ]
+    }
+  "XLSOrderLine": [ {  "CompNum": 2, "OrderedQty": 200.000,"PlantCode": "2", "ItemCode": "1600-2300-NPU01-0686T4", "SOrderLineNum": 1, "ReqDate": "2025-12-28",
+  
+  
+  
+  Update SO 
+  
+  
+  {
+  "XLSOrders": {
+    "XLSOrder": [
+      {
+        "CompNum": 2,
+        "PlantCode": "2",
+        "SOrderNum": 247323,
+        "SOrderStat": 0,
+        "XLSOrderLine": [
+          {
+            "CompNum": 2,
+            "ItemCode": "1600-2300-NPU01-0686T4",
+            "OrderedQty": 200.0,
+            "PlantCode": "2",
+            "ReqDate": "2025-12-28",
+            "SOrderLineNum": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+Header Update
+  Update SO 
+  
+  
+{
+  "XLSOrders": {
+    "XLSOrder": [
+      {
+        "CompNum": 2,
+        "PlantCode": "2",
+        "SOrderNum": ?,
+        "SOrderStat": 0,
+        "CustRef": "?"
+      }
+    ]
+  }
+}
+
+
+Response :
+
+{
+  "entityName": "XLinkAPISOrder",
+  "errorMessage": "",
+  "http_status": 200,
+  "payload_b64": "eyJYTFNPcmRlcnMiOiB7CiAgIlhMU09yZGVyIjogWwogICAgewogICAgICAiQWNrQWRkck51bSI6IDEwNywKICAgICAgIkFkZHRDdXN0UmVmIjogIjIzNzAxNyIsCiAgICAgICJCaWxsQWRkck51bSI6IDEwNywKICAgICAgIkJyb2tlck9yZGVyIjogMCwKICAgICAgIkNDQXV0aFRva2VuIjogIiIsCiAgICAgICJDb21wTnVtIjogMiwKICAgICAgIkNyZWF0ZVNoZWxsSm9iIjogZmFsc2UsCiAgICAgICJDU1JVc2VyQ29kZSI6ICIiLAogICAgICAiQ3VyckNvZGUiOiAiVVNEIiwKICAgICAgIkN1c3RDb2RlIjogIlBPTDAxIiwKICAgICAgIkN1c3RSZWYiOiAiMDgwNCAwMDY2IiwKICAgICAgIkN1c3RSZXFEYXRlIjogIjIwMjUtMTItMzEiLAogICAgICAiRGF5c1ByaW9yIjogMCwKICAgICAgIkVycm9yTWVzc2FnZSI6ICIiLAogICAgICAiRXN0Q29kZSI6ICIiLAogICAgICAiSW50ZXJmYWNlT3JkZXJDb2RlIjogIiIsCiAgICAgICJJbnRlcmZhY2VPcmRlckdyb3VwIjogIiIsCiAgICAgICJMYXN0VXNlckNvZGUiOiAiWExpbmsiLAogICAgICAiT3VyQ29udGFjdCI6ICIiLAogICAgICAiUGxhbm5lZEF2YWlsRGF0ZSI6ICIyMDI1LTEyLTMxIiwKICAgICAgIlBsYW50Q29kZSI6ICIyIiwKICAgICAgIlByZXZJbnRlcmZhY2VPcmRlck51bSI6ICIiLAogICAgICAiUHJpbnRMYW5nIjogIiIsCiAgICAgICJSZW1pdEFkZHJOdW0iOiAxMDcsCiAgICAgICJSZXBVc2VyQ29kZSI6ICIiLAogICAgICAiUmlza1N0b2NrIjogZmFsc2UsCiAgICAgICJTaGlwQWRkck51bSI6IDExOTcsCiAgICAgICJTT3JkZXJEYXRlIjogIjIwMjUtMTItMjIiLAogICAgICAiU09yZGVyTnVtIjogMjQ3MzIzLAogICAgICAiU09yZGVyU3RhdCI6IDAsCiAgICAgICJTT3JkZXJUZXh0IjogIiIsCiAgICAgICJTT1NvdXJjZUNvZGUiOiAiTFdTIiwKICAgICAgIlN1YkNsaWVudE5hbWUiOiAiIiwKICAgICAgIlRhYmxlUmVjSWQiOiAzMzYxMDM5MTYsCiAgICAgICJUZXJtc0NvZGUiOiAiTkVUIDMwIiwKICAgICAgIlRQQlRheENvZGUiOiAiIiwKICAgICAgIllvdXJDb250YWN0IjogIiIsCiAgICAgICJBY3Rpb24iOiAiVXBkYXRlIiwKICAgICAgIlhMU09yZGVyTGluZSI6IFsKICAgICAgICB7CiAgICAgICAgICAiQ29tcE51bSI6IDIsCiAgICAgICAgICAiSXRlbUNvZGUiOiAiMTYwMC0yMzAwLU5QVTAxLTA2ODZUNCIsCiAgICAgICAgICAiT3JkZXJlZFF0eSI6IDIwMC4wMDAsCiAgICAgICAgICAiUGxhbnRDb2RlIjogIjIiLAogICAgICAgICAgIlJlcURhdGUiOiAiMjAyNS0xMi0yOCIsCiAgICAgICAgICAiU09yZGVyTGluZU51bSI6IDEsCiAgICAgICAgICAiU09yZGVyTnVtIjogMjQ3MzIzLAogICAgICAgICAgIkFjdGlvbiI6ICJBZGQiCiAgICAgICAgfQogICAgICBdCiAgICB9CiAgXQp9fQo=",
+  "payload_decoded": {
+    "XLSOrders": {
+      "XLSOrder": [
+        {
+          "AckAddrNum": 107,
+          "Action": "Update",
+          "AddtCustRef": "237017",
+          "BillAddrNum": 107,
+          "BrokerOrder": 0,
+          "CCAuthToken": "",
+          "CSRUserCode": "",
+          "CompNum": 2,
+          "CreateShellJob": false,
+          "CurrCode": "USD",
+          "CustCode": "POL01",
+          "CustRef": "0804 0066",
+          "CustReqDate": "2025-12-31",
+          "DaysPrior": 0,
+          "ErrorMessage": "",
+          "EstCode": "",
+          "InterfaceOrderCode": "",
+          "InterfaceOrderGroup": "",
+          "LastUserCode": "XLink",
+          "OurContact": "",
+          "PlannedAvailDate": "2025-12-31",
+          "PlantCode": "2",
+          "PrevInterfaceOrderNum": "",
+          "PrintLang": "",
+          "RemitAddrNum": 107,
+          "RepUserCode": "",
+          "RiskStock": false,
+          "SOSourceCode": "LWS",
+          "SOrderDate": "2025-12-22",
+          "SOrderNum": 247323,
+          "SOrderStat": 0,
+          "SOrderText": "",
+          "ShipAddrNum": 1197,
+          "SubClientName": "",
+          "TPBTaxCode": "",
+          "TableRecId": 336103916,
+          "TermsCode": "NET 30",
+          "XLSOrderLine": [
+            {
+              "Action": "Add",
+              "CompNum": 2,
+              "ItemCode": "1600-2300-NPU01-0686T4",
+              "OrderedQty": 200.0,
+              "PlantCode": "2",
+              "ReqDate": "2025-12-28",
+              "SOrderLineNum": 1,
+              "SOrderNum": 247323
+            }
+          ],
+          "YourContact": ""
+        }
+      ]
+    }
+  },
+  "raw_text": "{\"efiRadiusResponse\":{\"entityName\":\"XLinkAPISOrder\",\"statusCode\":1,\"errorMessage\":\"\",\"payload\":\"eyJYTFNPcmRlcnMiOiB7CiAgIlhMU09yZGVyIjogWwogICAgewogICAgICAiQWNrQWRkck51bSI6IDEwNywKICAgICAgIkFkZHRDdXN0UmVmIjogIjIzNzAxNyIsCiAgICAgICJCaWxsQWRkck51bSI6IDEwNywKICAgICAgIkJyb2tlck9yZGVyIjogMCwKICAgICAgIkNDQXV0aFRva2VuIjogIiIsCiAgICAgICJDb21wTnVtIjogMiwKICAgICAgIkNyZWF0ZVNoZWxsSm9iIjogZmFsc2UsCiAgICAgICJDU1JVc2VyQ29kZSI6ICIiLAogICAgICAiQ3VyckNvZGUiOiAiVVNEIiwKICAgICAgIkN1c3RDb2RlIjogIlBPTDAxIiwKICAgICAgIkN1c3RSZWYiOiAiMDgwNCAwMDY2IiwKICAgICAgIkN1c3RSZXFEYXRlIjogIjIwMjUtMTItMzEiLAogICAgICAiRGF5c1ByaW9yIjogMCwKICAgICAgIkVycm9yTWVzc2FnZSI6ICIiLAogICAgICAiRXN0Q29kZSI6ICIiLAogICAgICAiSW50ZXJmYWNlT3JkZXJDb2RlIjogIiIsCiAgICAgICJJbnRlcmZhY2VPcmRlckdyb3VwIjogIiIsCiAgICAgICJMYXN0VXNlckNvZGUiOiAiWExpbmsiLAogICAgICAiT3VyQ29udGFjdCI6ICIiLAogICAgICAiUGxhbm5lZEF2YWlsRGF0ZSI6ICIyMDI1LTEyLTMxIiwKICAgICAgIlBsYW50Q29kZSI6ICIyIiwKICAgICAgIlByZXZJbnRlcmZhY2VPcmRlck51bSI6ICIiLAogICAgICAiUHJpbnRMYW5nIjogIiIsCiAgICAgICJSZW1pdEFkZHJOdW0iOiAxMDcsCiAgICAgICJSZXBVc2VyQ29kZSI6ICIiLAogICAgICAiUmlza1N0b2NrIjogZmFsc2UsCiAgICAgICJTaGlwQWRkck51bSI6IDExOTcsCiAgICAgICJTT3JkZXJEYXRlIjogIjIwMjUtMTItMjIiLAogICAgICAiU09yZGVyTnVtIjogMjQ3MzIzLAogICAgICAiU09yZGVyU3RhdCI6IDAsCiAgICAgICJTT3JkZXJUZXh0IjogIiIsCiAgICAgICJTT1NvdXJjZUNvZGUiOiAiTFdTIiwKICAgICAgIlN1YkNsaWVudE5hbWUiOiAiIiwKICAgICAgIlRhYmxlUmVjSWQiOiAzMzYxMDM5MTYsCiAgICAgICJUZXJtc0NvZGUiOiAiTkVUIDMwIiwKICAgICAgIlRQQlRheENvZGUiOiAiIiwKICAgICAgIllvdXJDb250YWN0IjogIiIsCiAgICAgICJBY3Rpb24iOiAiVXBkYXRlIiwKICAgICAgIlhMU09yZGVyTGluZSI6IFsKICAgICAgICB7CiAgICAgICAgICAiQ29tcE51bSI6IDIsCiAgICAgICAgICAiSXRlbUNvZGUiOiAiMTYwMC0yMzAwLU5QVTAxLTA2ODZUNCIsCiAgICAgICAgICAiT3JkZXJlZFF0eSI6IDIwMC4wMDAsCiAgICAgICAgICAiUGxhbnRDb2RlIjogIjIiLAogICAgICAgICAgIlJlcURhdGUiOiAiMjAyNS0xMi0yOCIsCiAgICAgICAgICAiU09yZGVyTGluZU51bSI6IDEsCiAgICAgICAgICAiU09yZGVyTnVtIjogMjQ3MzIzLAogICAgICAgICAgIkFjdGlvbiI6ICJBZGQiCiAgICAgICAgfQogICAgICBdCiAgICB9CiAgXQp9fQo=\"}}",
+  "statusCode": 1
+}
